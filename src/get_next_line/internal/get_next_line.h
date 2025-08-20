@@ -17,10 +17,4 @@
 #  define BUFFER_SIZE 42
 # endif
 
-char			*get_next_line(int fd);
-char			*ft_strrest(char *s, int start);
-char			*ft_strjoin(char *s1, char *s2);
-void			*ft_calloc(unsigned long nmemb, unsigned long size);
-int				ft_strchr(char *s, int c);
-unsigned long	ft_strlen(char *s);
 #endif
