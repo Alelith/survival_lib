@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   str_copy.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 18:53:15 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:51:51 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 11:39:19 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "survival_lib.h"
 
 size_t	str_copy(char *dst, const char *src, size_t size)
 {
@@ -26,5 +26,5 @@ size_t	str_copy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	return (ft_strlen(src));
+	return (str_len(src));
 }

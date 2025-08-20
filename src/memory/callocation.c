@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   callocation.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:11:14 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:28:04 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 11:38:18 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "survival_lib.h"
 #include <stdlib.h>
 
 void	*callocation(size_t nmemb, size_t size)
@@ -20,6 +20,6 @@ void	*callocation(size_t nmemb, size_t size)
 	result = malloc(nmemb * size);
 	if (!result)
 		return (NULL);
-	ft_bzero(result, nmemb * size);
+	set_zero(result, nmemb * size);
 	return (result);
 }

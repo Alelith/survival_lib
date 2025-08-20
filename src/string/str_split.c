@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   str_split.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 23:15:38 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:52:19 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 11:41:34 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "survival_lib.h"
 #include <stdlib.h>
 
 static int	word_count(char const *s, char delimiter)
@@ -45,7 +45,7 @@ static void	*fill_arr(char **result, char *str, int wordcount, char c)
 	{
 		while (str[next] != c && str[next])
 			next++;
-		result[i] = ft_substr(str, 0, next);
+		result[i] = str_substring(str, 0, next);
 		if (!result[i] || result[i][0] == 0)
 		{
 			while (i--)
@@ -70,7 +70,7 @@ char	**str_split(char const *s, char c)
 	char	**result;
 
 	wordcount = word_count(s, c);
-	cleanstr = ft_strtrim(s, &c);
+	cleanstr = str_trim(s, &c);
 	if (!cleanstr)
 		return (NULL);
 	result = malloc(sizeof(char *) * (wordcount + 1));

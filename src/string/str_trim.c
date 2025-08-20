@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   str_trim.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 22:27:42 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:52:37 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 11:42:23 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "survival_lib.h"
 
 static int	is_from_set(char c, const char *set)
 {
@@ -28,12 +28,12 @@ char	*str_trim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	end = ft_strlen(s1) - 1;
+	end = str_len(s1) - 1;
 	start = 0;
 	while (s1[start] && is_from_set(s1[start], set))
 		start++;
 	while (start < end && is_from_set(s1[end], set))
 		end--;
-	result = ft_substr(s1, start, end - start + 1);
+	result = str_substring(s1, start, end - start + 1);
 	return (result);
 }

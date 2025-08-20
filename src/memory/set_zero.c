@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   set_zero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:17:54 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:27:23 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 11:38:53 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "survival_lib.h"
 
 void	set_zero(void *s, size_t n)
 {
-	ft_memset(s, 0, n);
+	mem_set(s, 0, n);
 }

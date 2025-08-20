@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   str_search_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:40:40 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:53:16 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 11:41:07 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "survival_lib.h"
 
 char	*str_search_str(const char *big, const char *little, size_t len)
 {
@@ -20,7 +20,7 @@ char	*str_search_str(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	little_len = ft_strlen(little);
+	little_len = str_len(little);
 	if (little_len == 0)
 		return ((char *) big);
 	while (i < len && big[i])

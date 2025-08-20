@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mem_move.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:22:20 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:28:59 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 11:38:38 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "survival_lib.h"
 
 void	*mem_move(void *dest, const void *src, size_t n)
 {
@@ -30,6 +30,6 @@ void	*mem_move(void *dest, const void *src, size_t n)
 		}
 	}
 	else
-		ft_memcpy(dest, src, n);
+		mem_copy(dest, src, n);
 	return (dest);
 }

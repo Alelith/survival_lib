@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_alphanumeric.c                                  :+:      :+:    :+:   */
+/*   to_lowe.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:12:09 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/20 11:37:05 by bvarea-k         ###   ########.fr       */
+/*   Created: 2025/04/23 11:33:36 by acesteve          #+#    #+#             */
+/*   Updated: 2025/08/14 17:26:34 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "survival_lib.h"
-
-int	is_alphanumeric(int c)
+int	to_lower(int c)
 {
-	return (is_alphabetic(c) || is_digit(c));
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }
