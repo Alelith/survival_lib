@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   callocation.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:11:14 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/20 11:38:18 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:09:37 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "survival_lib.h"
-#include <stdlib.h>
 
 void	*callocation(size_t nmemb, size_t size)
 {

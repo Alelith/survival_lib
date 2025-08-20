@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:37:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:28:43 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:09:54 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	mem_compare(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (src1[i] != src2[i])
-			return (src1[i] - src2[i]);
+			return (1);
 		i++;
 	}
 	return (0);

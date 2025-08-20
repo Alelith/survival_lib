@@ -6,11 +6,11 @@
 /*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:27:17 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:44:44 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:10:48 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "survival_lib.h"
 
 static int	int_len(int nbr)
 {

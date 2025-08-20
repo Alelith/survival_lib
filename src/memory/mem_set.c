@@ -6,11 +6,11 @@
 /*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:16:55 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/14 17:29:14 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:10:12 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "survival_lib.h"
 
 void	*mem_set(void *s, int c, size_t n)
 {
