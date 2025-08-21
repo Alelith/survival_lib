@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_bnbr.c                                         :+:      :+:    :+:   */
+/*   reallocation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/21 08:37:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/21 09:46:59 by acesteve         ###   ########.fr       */
+/*   Created: 2025/07/09 16:02:03 by acesteve          #+#    #+#             */
+/*   Updated: 2025/08/21 11:04:43 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf_internal.h"
 #include "survival_lib.h"
 
-static int	absolute(int nbr)
+void	*reallocation(void *ptr, unsigned long new_size, unsigned long old_size)
 {
-	if (nbr < 0)
-		return (-nbr);
-	return (nbr);
-}
+	void	*new_ptr;
 
-int	put_bnbr(int nbr, int base)
-{
-	char	*digits;
-	int		len;
-	int		sign;
-
-	digits = "0123456789ABCDEF";
-	len = 0;
-	if (nbr < 0)
-		sign = -1;
-	else
-		sign = 1;
-	if (nbr == 0)
-		return (write(1, "0", 1));
-	while (nbr != 0)
+	if (!ptr)
+		return (callocation(new_size, 1));
+	if (!new_size)
 	{
-		write(1, &digits[absolute(nbr % base)], 1);
-		nbr /= base;
-		len++;
+		free(ptr);
+		return (0);
 	}
-	return (len);
+	new_ptr = callocation(new_size, 1);
+	if (new_ptr == 0)
+		return (0);
+	if (new_size > old_size)
+		mem_copy(new_ptr, ptr, old_size);
+	else
+		mem_copy(new_ptr, ptr, new_size);
+	free(ptr);
+	return (new_ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/20 18:09:28 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/21 11:08:02 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,6 +210,19 @@ int		to_lower(int c);
  * @return A pointer to the allocated memory, or NULL if the allocation failed.
  */
 void	*callocation(size_t nmemb, size_t size);
+
+/**
+ * @brief Reallocates clean memory for an array of elements.
+ * @ingroup memory_functions
+ * 
+ * @param ptr The pointer to reallocate.
+ * @param new_size The new size of the memory block.
+ * @param old_size Current size of the memory block.
+ * 
+ * @return A pointer to the allocated memory, or NULL if the allocation failed.
+ */
+void	*reallocation(void *ptr, unsigned long new_size,
+			unsigned long old_size);
 
 /**
  * @brief Compares two memory blocks.
