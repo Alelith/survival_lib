@@ -6,9 +6,11 @@
 /*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 22:53:01 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/24 22:54:10 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/25 09:52:00 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "survival_lib.h"
 
 static int	uint_len(unsigned int num)
 {

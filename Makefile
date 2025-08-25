@@ -19,10 +19,13 @@ CC = cc -Wall -Wextra -Werror -g
 INCLUDE = -I include
 
 CHECK_DIR = check/
-CHECK_FILES = is_alphabetic is_alphanumeric is_ascii is_digit is_print str_compare
+CHECK_FILES = is_alphabetic is_alphanumeric is_ascii is_digit is_print \
+				str_compare_n str_compare_all
 
 CONVERSION_DIR = conversion/
-CONVERSION_FILES = int_to_str str_to_int to_lower to_upper
+CONVERSION_FILES = int_to_str uint_to_str bnum_to_str float_to_str \
+				str_to_int str_to_uint str_to_float \
+				to_lower to_upper
 
 MEMORY_DIR = memory/
 MEMORY_FILES = callocation mem_compare mem_copy mem_move mem_search mem_set set_zero
@@ -33,8 +36,7 @@ STRING_FILES = str_concat str_copy str_duplicate str_join str_len \
 
 PRINTF_DIR = printf/
 PRINTF_FILES = print_format \
-	internal/print/print_nbr \
-	internal/print/print_str
+				internal/print_nbr internal/print_str
 
 SRC_FILES += $(addprefix $(CHECK_DIR), $(CHECK_FILES))
 SRC_FILES += $(addprefix $(CONVERSION_DIR), $(CONVERSION_FILES))
@@ -52,10 +54,13 @@ $(NAME): $(OBJS)
 	@ar rcs $@ $^
 	@echo "$(GREEN)Library created: $@$(DEF_COLOR)"
 
+$(OBJ_DIR)printf/print_format.o: $(SRC_DIR)printf/print_format.c | $(OBJSF)
+	@echo "$(CYAN)Compiling: $< with printf_internal.h$(DEF_COLOR)"
+	@$(CC) -c $< -o $@ $(INCLUDE) -I $(SRC_DIR)printf/internal
+
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJSF)
 	@echo "$(CYAN)Compiling: $<$(DEF_COLOR)"
 	@$(CC) -c $< -o $@ $(INCLUDE)
-	
 
 $(OBJSF):
 	@echo "$(MAGENTA)Creating dirs$(DEF_COLOR)"
@@ -68,8 +73,13 @@ $(OBJSF):
 	@mkdir -p $(OBJ_DIR)$(PRINTF_DIR)internal/
 
 clean:
-	@echo "$(RED)Cleaning lib files$(DEF_COLOR)"
+	@echo "$(RED)Cleaning obj files$(DEF_COLOR)"
 	@rm -rf $(OBJ_DIR)
+
+fclean: clean
+	@echo "$(RED)Cleaning all files$(DEF_COLOR)"
 	@rm -f $(NAME)
 
-.PHONY: all clean
+re: fclean all
+
+.PHONY: all clean fclean re

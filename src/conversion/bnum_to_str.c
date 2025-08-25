@@ -6,9 +6,11 @@
 /*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 23:00:35 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/24 23:08:04 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/25 09:52:14 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "survival_lib.h"
 
 static int	bnum_len(int num, int base)
 {

@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/25 09:26:08 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/25 10:09:37 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@
 
 #ifndef SURVIVAL_LIB_H
 # define SURVIVAL_LIB_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 256
+# endif
+
 # include <stddef.h>
 # include <stdlib.h>
 

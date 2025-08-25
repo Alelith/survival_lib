@@ -6,15 +6,16 @@
 /*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 22:26:52 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/24 22:35:24 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/25 09:53:11 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "survival_lib.h"
 
 static int	float_len(float num, int decimals)
 {
 	int		len;
 	int		int_part;
-	float	frac_part;
 
 	len = 0;
 	if (num < 0.0f)
@@ -23,7 +24,6 @@ static int	float_len(float num, int decimals)
 		num = -num;
 	}
 	int_part = (int)num;
-	frac_part = num - int_part;
 	if (int_part == 0)
 		len++;
 	while (int_part > 0)
