@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   survival_lib.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/21 11:08:02 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/08/25 09:15:15 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@
 # define SURVIVAL_LIB_H
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 /*=====================================================================
 --------------------------- Check functions ---------------------------
@@ -75,7 +76,7 @@
  * 
  * @return 1 if the character is alphabetic, 0 otherwise.
  */
-int		is_alphabetic(int c);
+int				is_alphabetic(int c);
 
 /**
  * @brief Checks if the character is an alphanumeric character.
@@ -85,7 +86,7 @@ int		is_alphabetic(int c);
  * 
  * @return 1 if the character is alphanumeric, 0 otherwise.
  */
-int		is_alphanumeric(int c);
+int				is_alphanumeric(int c);
 
 /**
  * @brief Checks if the character is an ASCII character.
@@ -95,7 +96,7 @@ int		is_alphanumeric(int c);
  * 
  * @return 1 if the character is ASCII, 0 otherwise.
  */
-int		is_ascii(int c);
+int				is_ascii(int c);
 
 /** 
  * @brief Checks if the character is a digit.
@@ -105,7 +106,7 @@ int		is_ascii(int c);
  * 
  * @return 1 if the character is a digit, 0 otherwise.
  */
-int		is_digit(int c);
+int				is_digit(int c);
 
 /**
  * @brief Checks if the character is a printable character.
@@ -115,7 +116,7 @@ int		is_digit(int c);
  * 
  * @return 1 if the character is printable, 0 otherwise.
  */
-int		is_print(int c);
+int				is_print(int c);
 
 /**
  * @brief Checks if two strings are equal in a length.
@@ -127,7 +128,7 @@ int		is_print(int c);
  * 
  * @return 1 if the strings are equal, 0 otherwise.
  */
-int		str_compare_n(const char *s1, const char *s2, size_t n);
+int				str_compare_n(const char *s1, const char *s2, size_t n);
 
 /**
  * @brief Checks if two strings are equal.
@@ -138,7 +139,7 @@ int		str_compare_n(const char *s1, const char *s2, size_t n);
  * 
  * @return 1 if the strings are equal, 0 otherwise.
  */
-int		str_compare_all(const char *s1, const char *s2);
+int				str_compare_all(const char *s1, const char *s2);
 
 /*=====================================================================
 ------------------------ Conversion functions -------------------------
@@ -159,7 +160,45 @@ int		str_compare_all(const char *s1, const char *s2);
  * @return A pointer to the string representation of the integer.
  * Needs to be freed after use.
  */
-char	*int_to_str(int n);
+char			*int_to_str(int n);
+
+/**
+ * @brief Converts an unsigned integer to a string.
+ * @ingroup conversion_functions
+ * 
+ * @param n The unsigned integer to convert.
+ * 
+ * @return A pointer to the string representation of the unsigned integer.
+ * Needs to be freed after use.
+ */
+char			*uint_to_str(unsigned int n);
+
+/**
+ * @brief Converts a float to a string with specified decimal places.
+ * @ingroup conversion_functions
+ * 
+ * @param n The float to convert.
+ * @param decimals The number of decimal places.
+ * 
+ * @return A pointer to the string representation of the float.
+ * Needs to be freed after use.
+ */
+char			*float_to_str(float n, int decimals);
+
+/**
+ * @brief Converts an integer to a string in a specified base.
+ * @ingroup conversion_functions
+ * 
+ * @param number The integer to convert.
+ * @param base The base for conversion (e.g., 2 for binary, 10 for decimal,
+ *  16 for hexadecimal).
+ * @param is_upper If non-zero, use uppercase letters for bases greater than 10.
+ * 
+ * @return A pointer to the string representation of the integer in
+ *  the specified base.
+ * Needs to be freed after use.
+ */
+char			*bnum_to_str(int number, int base, int is_upper);
 
 /**
  * @brief Converts a string to an integer.
@@ -169,7 +208,27 @@ char	*int_to_str(int n);
  * 
  * @return The integer representation of the string.
  */
-int		str_to_int(const char *nptr);
+int				str_to_int(const char *nptr);
+
+/**
+ * @brief Converts a string to an unsigned integer.
+ * @ingroup conversion_functions
+ * 
+ * @param nptr The string to convert.
+ * 
+ * @return The unsigned integer representation of the string.
+ */
+unsigned int	str_to_uint(const char *nptr);
+
+/**
+ * @brief Converts a string to a float.
+ * @ingroup conversion_functions
+ * 
+ * @param nptr The string to convert.
+ * 
+ * @return The float representation of the string.
+ */
+float			str_to_float(const char *nptr);
 
 /**
  * @brief Converts a character to uppercase.
@@ -179,7 +238,7 @@ int		str_to_int(const char *nptr);
  * 
  * @return The uppercase equivalent of the character.
  */
-int		to_upper(int c);
+int				to_upper(int c);
 
 /**
  * @brief Converts a character to lowercase.
@@ -189,7 +248,7 @@ int		to_upper(int c);
  * 
  * @return The lowercase equivalent of the character.
  */
-int		to_lower(int c);
+int				to_lower(int c);
 
 /*=====================================================================
 -------------------------- Memory functions ---------------------------
@@ -209,7 +268,7 @@ int		to_lower(int c);
  * 
  * @return A pointer to the allocated memory, or NULL if the allocation failed.
  */
-void	*callocation(size_t nmemb, size_t size);
+void			*callocation(size_t nmemb, size_t size);
 
 /**
  * @brief Reallocates clean memory for an array of elements.
@@ -221,8 +280,8 @@ void	*callocation(size_t nmemb, size_t size);
  * 
  * @return A pointer to the allocated memory, or NULL if the allocation failed.
  */
-void	*reallocation(void *ptr, unsigned long new_size,
-			unsigned long old_size);
+void			*reallocation(void *ptr, unsigned long new_size,
+					unsigned long old_size);
 
 /**
  * @brief Compares two memory blocks.
@@ -234,7 +293,7 @@ void	*reallocation(void *ptr, unsigned long new_size,
  * 
  * @return 1 if the memory blocks are equal, 0 otherwise.
  */
-int		mem_compare(const void *s1, const void *s2, size_t n);
+int				mem_compare(const void *s1, const void *s2, size_t n);
 
 /**
  * @brief Copies memory from one block to another.
@@ -246,7 +305,7 @@ int		mem_compare(const void *s1, const void *s2, size_t n);
  * 
  * @return A pointer to the destination memory block.
  */
-void	*mem_copy(void *dest, const void *src, size_t n);
+void			*mem_copy(void *dest, const void *src, size_t n);
 
 /**
  * @brief Moves memory from one block to another.
@@ -258,7 +317,7 @@ void	*mem_copy(void *dest, const void *src, size_t n);
  * 
  * @return A pointer to the destination memory block.
  */
-void	*mem_move(void *dest, const void *src, size_t n);
+void			*mem_move(void *dest, const void *src, size_t n);
 
 /**
  * @brief Searches for a character in a memory block.
@@ -271,7 +330,7 @@ void	*mem_move(void *dest, const void *src, size_t n);
  * @return A pointer to the first occurrence of the character 
  * in the memory block, or NULL if not found.
  */
-void	*mem_search(const void *s, int c, size_t n);
+void			*mem_search(const void *s, int c, size_t n);
 
 /**
  * @brief Sets a block of memory to a specified value.
@@ -283,7 +342,7 @@ void	*mem_search(const void *s, int c, size_t n);
  * 
  * @return A pointer to the memory block.
  */
-void	*mem_set(void *s, int c, size_t n);
+void			*mem_set(void *s, int c, size_t n);
 
 /**
  * @brief Sets a block of memory to zero.
@@ -292,7 +351,7 @@ void	*mem_set(void *s, int c, size_t n);
  * @param s The memory block to set.
  * @param n The number of bytes to set.
  */
-void	set_zero(void *s, size_t n);
+void			set_zero(void *s, size_t n);
 
 /*=====================================================================
 -------------------------- String functions ---------------------------
@@ -313,7 +372,7 @@ void	set_zero(void *s, size_t n);
  * 
  * @return The total length of the string it tried to create.
  */
-size_t	str_concat(char *dst, const char *src, size_t size);
+size_t			str_concat(char *dst, const char *src, size_t size);
 
 /**
  * @brief Copies a string to a destination buffer.
@@ -325,7 +384,7 @@ size_t	str_concat(char *dst, const char *src, size_t size);
  * 
  * @return The total length of the string it tried to create.
  */
-size_t	str_copy(char *dst, const char *src, size_t size);
+size_t			str_copy(char *dst, const char *src, size_t size);
 
 /**
  * @brief Create a duplicate of a string.
@@ -336,7 +395,7 @@ size_t	str_copy(char *dst, const char *src, size_t size);
  * @return A pointer to the duplicated string, or NULL if the allocation failed.
  * Needs to be freed after use.
  */
-char	*str_duplicate(const char *s);
+char			*str_duplicate(const char *s);
 
 /**
  * @brief Joins two strings into a new string.
@@ -348,7 +407,7 @@ char	*str_duplicate(const char *s);
  * @return A pointer to the new string containing the concatenation of s1 and s2,
  * or NULL if the allocation failed. Needs to be freed after use.
  */
-char	*str_join(char const *s1, char const *s2);
+char			*str_join(char const *s1, char const *s2);
 
 /**
  * @brief Returns the length of a string.
@@ -358,7 +417,7 @@ char	*str_join(char const *s1, char const *s2);
  * 
  * @return The length of the string.
  */
-size_t	str_len(const char *str);
+size_t			str_len(const char *str);
 
 /**
  * @brief Searches for the first occurrence of a character in a string.
@@ -370,7 +429,7 @@ size_t	str_len(const char *str);
  * @return A pointer to the first occurrence of the character in the string, 
  * or NULL if not found.
  */
-char	*str_search_char(const char *s, int c);
+char			*str_search_char(const char *s, int c);
 
 /**
  * @brief Searches for the last occurrence of a character in a string.
@@ -382,7 +441,7 @@ char	*str_search_char(const char *s, int c);
  * @return A pointer to the last occurrence of the character in the string, 
  * or NULL if not found.
  */
-char	*str_search_rev_char(const char *s, int c);
+char			*str_search_rev_char(const char *s, int c);
 
 /**
  * @brief Searches for the first occurrence of a substring in a string.
@@ -394,7 +453,8 @@ char	*str_search_rev_char(const char *s, int c);
  * 
  * @return A pointer to the first occurrence of the substring in the string,
  */
-char	*str_search_str(const char *big, const char *little, size_t len);
+char			*str_search_str(const char *big, const char *little,
+					size_t len);
 
 /**
  * @brief Splits a string into an array of strings based on a delimiter.
@@ -406,7 +466,7 @@ char	*str_search_str(const char *big, const char *little, size_t len);
  * @return An array of strings, or NULL if the allocation failed.
  * Needs to be freed after use, including each string in the array.
  */
-char	**str_split(char const *s, char c);
+char			**str_split(char const *s, char c);
 
 /**
  * @brief Returns a substring of a string.
@@ -419,7 +479,7 @@ char	**str_split(char const *s, char c);
  * @return A pointer to the substring, or NULL if the allocation failed.
  * Needs to be freed after use.
  */
-char	*str_substring(char const *s, unsigned int start, size_t len);
+char			*str_substring(char const *s, unsigned int start, size_t len);
 
 /**
  * @brief Removes leading and trailing characters from a string.
@@ -431,12 +491,12 @@ char	*str_substring(char const *s, unsigned int start, size_t len);
  * @return A pointer to the trimmed string, or NULL if the allocation failed.
  * Needs to be freed after use.
  */
-char	*str_trim(char const *s1, char const *set);
+char			*str_trim(char const *s1, char const *set);
 
 /*=====================================================================
 --------------------------- Print formatted ---------------------------
 =====================================================================*/
 
-int		ft_printf(const char *format, ...);
+int				print_format(const char *format, ...);
 
 #endif

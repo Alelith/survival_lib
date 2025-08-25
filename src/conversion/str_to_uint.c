@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_internal.h                                  :+:      :+:    :+:   */
+/*   str_to_uint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 22:40:25 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/24 22:44:43 by acesteve         ###   ########.fr       */
+/*   Created: 2025/08/24 22:51:20 by acesteve          #+#    #+#             */
+/*   Updated: 2025/08/24 22:52:50 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_INTERNAL_H
-# define PRINTF_INTERNAL_H
+unsigned int	str_to_uint(const char *nptr)
+{
+	unsigned int	result;
 
-#endif
+	result = 0;
+	while (*nptr)
+	{
+		result = result * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (result);
+}
