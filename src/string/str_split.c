@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 23:15:38 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/20 11:41:34 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/09/16 09:15:43 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,24 @@ static int	word_count(char const *s, char delimiter)
 	return (wordcount);
 }
 
+static int	process_word(char **result, char *str, char c, int i)
+{
+	int	next;
+
+	next = 0;
+	while (str[next] != c && str[next])
+		next++;
+	result[i] = str_substring(str, 0, next);
+	if (!result[i] || result[i][0] == 0)
+	{
+		while (i--)
+			free(result[i]);
+		free(result);
+		return (-1);
+	}
+	return (next);
+}
+
 static void	*fill_arr(char **result, char *str, int wordcount, char c)
 {
 	int	i;
@@ -43,20 +61,15 @@ static void	*fill_arr(char **result, char *str, int wordcount, char c)
 	next = 0;
 	while (wordcount-- && str && *str)
 	{
-		while (str[next] != c && str[next])
-			next++;
-		result[i] = str_substring(str, 0, next);
-		if (!result[i] || result[i][0] == 0)
-		{
-			while (i--)
-				free(result[i]);
-			free(result);
+		next = process_word(result, str, c, i);
+		if (next == -1)
 			return (NULL);
-		}
-		str += next + 1;
+		if (str[next] == '\0')
+			str += next;
+		else
+			str += next + 1;
 		while (*str == c)
 			str++;
-		next = 0;
 		i++;
 	}
 	result[i] = NULL;
@@ -66,11 +79,14 @@ static void	*fill_arr(char **result, char *str, int wordcount, char c)
 char	**str_split(char const *s, char c)
 {
 	int		wordcount;
+	char	set[2];
 	char	*cleanstr;
 	char	**result;
 
 	wordcount = word_count(s, c);
-	cleanstr = str_trim(s, &c);
+	set[0] = c;
+	set[1] = 0;
+	cleanstr = str_trim(s, set);
 	if (!cleanstr)
 		return (NULL);
 	result = malloc(sizeof(char *) * (wordcount + 1));

@@ -6,7 +6,7 @@
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:35:15 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/20 11:40:56 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/09/16 09:15:39 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*str_search_rev_char(const char *s, int c)
 			return ((char *)s);
 		s--;
 	}
-	return (NULL);
+	return (0);
 }

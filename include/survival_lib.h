@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   survival_lib.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/25 10:09:37 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:38:21 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,13 @@
  * 
  * @section author_sec Authors
  * This library was developed by:
- * - Begonia de todos los santos
- * - Liliana la de la esquina
+ * - Lilith Estévez Boeta
  */
 
 /**
  * @file survival_lib.h
- * @author Begonia de todos los santos
- * @author Liliana la de la ehquina 
- * @brief This is the header of the standar functions on C
+ * @author Lilith Estévez Boeta
+ * @brief This is the header of the standart functions on C
  */
 
 #ifndef SURVIVAL_LIB_H
@@ -72,78 +70,14 @@
  * @brief Functions to check character properties and string equality.
  */
 
-/**
- * @brief Checks if the character is an alphabetic character.
- * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @return 1 if the character is alphabetic, 0 otherwise.
- */
 int				is_alphabetic(int c);
-
-/**
- * @brief Checks if the character is an alphanumeric character.
- * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @return 1 if the character is alphanumeric, 0 otherwise.
- */
 int				is_alphanumeric(int c);
-
-/**
- * @brief Checks if the character is an ASCII character.
- * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @return 1 if the character is ASCII, 0 otherwise.
- */
 int				is_ascii(int c);
-
-/** 
- * @brief Checks if the character is a digit.
- * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @return 1 if the character is a digit, 0 otherwise.
- */
 int				is_digit(int c);
-
-/**
- * @brief Checks if the character is a printable character.
- * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @return 1 if the character is printable, 0 otherwise.
- */
 int				is_print(int c);
-
-/**
- * @brief Checks if two strings are equal in a length.
- * @ingroup check_functions
- * 
- * @param s1 The first string.
- * @param s2 The second string.
- * @param n The maximum number of characters to compare.
- * 
- * @return 1 if the strings are equal, 0 otherwise.
- */
-int				str_compare_n(const char *s1, const char *s2, size_t n);
-
-/**
- * @brief Checks if two strings are equal.
- * @ingroup check_functions
- * 
- * @param s1 The first string.
- * @param s2 The second string.
- * 
- * @return 1 if the strings are equal, 0 otherwise.
- */
+int				is_space(char c);
 int				str_compare_all(const char *s1, const char *s2);
+int				str_compare_n(const char *s1, const char *s2, size_t n);
 
 /*=====================================================================
 ------------------------ Conversion functions -------------------------
@@ -155,103 +89,14 @@ int				str_compare_all(const char *s1, const char *s2);
  * or representations.
  */
 
-/**
- * @brief Converts an integer to a string.
- * @ingroup conversion_functions
- * 
- * @param n The integer to convert.
- * 
- * @return A pointer to the string representation of the integer.
- * Needs to be freed after use.
- */
 char			*int_to_str(int n);
-
-/**
- * @brief Converts an unsigned integer to a string.
- * @ingroup conversion_functions
- * 
- * @param n The unsigned integer to convert.
- * 
- * @return A pointer to the string representation of the unsigned integer.
- * Needs to be freed after use.
- */
 char			*uint_to_str(unsigned int n);
-
-/**
- * @brief Converts a float to a string with specified decimal places.
- * @ingroup conversion_functions
- * 
- * @param n The float to convert.
- * @param decimals The number of decimal places.
- * 
- * @return A pointer to the string representation of the float.
- * Needs to be freed after use.
- */
 char			*float_to_str(float n, int decimals);
-
-/**
- * @brief Converts an integer to a string in a specified base.
- * @ingroup conversion_functions
- * 
- * @param number The integer to convert.
- * @param base The base for conversion (e.g., 2 for binary, 10 for decimal,
- *  16 for hexadecimal).
- * @param is_upper If non-zero, use uppercase letters for bases greater than 10.
- * 
- * @return A pointer to the string representation of the integer in
- *  the specified base.
- * Needs to be freed after use.
- */
-char			*bnum_to_str(int number, int base, int is_upper);
-
-/**
- * @brief Converts a string to an integer.
- * @ingroup conversion_functions
- * 
- * @param nptr The string to convert.
- * 
- * @return The integer representation of the string.
- */
+char			*bnum_to_str(int n, int base, int is_upper);
 int				str_to_int(const char *nptr);
-
-/**
- * @brief Converts a string to an unsigned integer.
- * @ingroup conversion_functions
- * 
- * @param nptr The string to convert.
- * 
- * @return The unsigned integer representation of the string.
- */
 unsigned int	str_to_uint(const char *nptr);
-
-/**
- * @brief Converts a string to a float.
- * @ingroup conversion_functions
- * 
- * @param nptr The string to convert.
- * 
- * @return The float representation of the string.
- */
 float			str_to_float(const char *nptr);
-
-/**
- * @brief Converts a character to uppercase.
- * @ingroup conversion_functions
- * 
- * @param c The character to convert.
- * 
- * @return The uppercase equivalent of the character.
- */
 int				to_upper(int c);
-
-/**
- * @brief Converts a character to lowercase.
- * @ingroup conversion_functions
- * 
- * @param c The character to convert.
- * 
- * @return The lowercase equivalent of the character.
- */
 int				to_lower(int c);
 
 /*=====================================================================
@@ -459,6 +304,12 @@ char			*str_search_rev_char(const char *s, int c);
  */
 char			*str_search_str(const char *big, const char *little,
 					size_t len);
+
+char			*str_search_set(const char *s, const char *set);
+
+int				is_from_set(char c, const char *set);
+
+int				str_contains(char *str, char *set);
 
 /**
  * @brief Splits a string into an array of strings based on a delimiter.

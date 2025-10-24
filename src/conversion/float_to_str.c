@@ -3,27 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   float_to_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 22:26:52 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/25 09:53:11 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:27:53 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "survival_lib.h"
 
-static int	float_len(float num, int decimals)
+/**
+ * @file float_to_str.c
+ * @author Lilith Estévez Boeta
+ * @brief This file contains the implementation of the float_to_str function.
+ */
+
+/**
+ * @brief Get the of digits and signs that a number contains.
+ * 
+ * @param nbr The number to evaluate.
+ * @param decimals Decimals of accuracy.
+ * 
+ * @return The length of the number.
+ */
+static int	float_len(float nbr, int decimals)
 {
 	int		len;
 	int		int_part;
 
 	len = 0;
-	if (num < 0.0f)
+	if (nbr < 0.0f)
 	{
 		len++;
-		num = -num;
+		nbr = -nbr;
 	}
-	int_part = (int)num;
+	int_part = (int)nbr;
 	if (int_part == 0)
 		len++;
 	while (int_part > 0)
@@ -36,7 +50,15 @@ static int	float_len(float num, int decimals)
 	return (len);
 }
 
-static void	fill_float_str(char *result, float number, int decimals, int length)
+/**
+ * @brief Fills the result string with the number to convert.
+ * 
+ * @param result String to insert the numbers.
+ * @param nbr The number to convert to string.
+ * @param decimals Decimals of accuracy.
+ * @param length Length of the number to convert
+ */
+static void	fill_float_str(char *result, float nbr, int decimals, int length)
 {
 	int		i;
 	int		int_part;
@@ -44,8 +66,8 @@ static void	fill_float_str(char *result, float number, int decimals, int length)
 	int		digit;	
 
 	i = length - 1;
-	int_part = (int)number;
-	frac_part = number - int_part;
+	int_part = (int)nbr;
+	frac_part = nbr - int_part;
 	while (decimals-- > 0)
 	{
 		frac_part *= 10.0f;
@@ -63,21 +85,31 @@ static void	fill_float_str(char *result, float number, int decimals, int length)
 	}
 }
 
-char	*float_to_str(float number, int decimals)
+/**
+ * @brief Converts a float to a string with specified decimal places.
+ * @ingroup conversion_functions
+ * 
+ * @param n The float to convert.
+ * @param decimals The number of decimal places.
+ * 
+ * @return A pointer to the string representation of the float.
+ * @warning Needs to be freed after use.
+ */
+char	*float_to_str(float n, int decimals)
 {
 	int		length;
 	char	*result;
 
-	length = float_len(number, decimals);
+	length = float_len(n, decimals);
 	result = malloc(length + 1);
 	if (!result)
 		return (0);
 	result[length] = '\0';
-	if (number < 0.0f)
+	if (n < 0.0f)
 	{
 		result[0] = '-';
-		number = -number;
+		n = -n;
 	}
-	fill_float_str(result, number, decimals, length);
+	fill_float_str(result, n, decimals, length);
 	return (result);
 }

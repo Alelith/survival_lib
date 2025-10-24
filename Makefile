@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#              #
+#    Updated: 2025/10/18 09:27:36 by acesteve         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = survivalib.a
 
 DEF_COLOR = \033[0;39m
@@ -20,7 +32,7 @@ INCLUDE = -I include
 
 CHECK_DIR = check/
 CHECK_FILES = is_alphabetic is_alphanumeric is_ascii is_digit is_print \
-				str_compare_n str_compare_all
+				is_space str_compare_n str_compare_all
 
 CONVERSION_DIR = conversion/
 CONVERSION_FILES = int_to_str uint_to_str bnum_to_str float_to_str \
@@ -28,11 +40,12 @@ CONVERSION_FILES = int_to_str uint_to_str bnum_to_str float_to_str \
 				to_lower to_upper
 
 MEMORY_DIR = memory/
-MEMORY_FILES = callocation mem_compare mem_copy mem_move mem_search mem_set set_zero
+MEMORY_FILES = callocation reallocation mem_compare mem_copy mem_move mem_search mem_set set_zero
 
 STRING_DIR = string/
 STRING_FILES = str_concat str_copy str_duplicate str_join str_len \
-				str_search_char str_search_rev_char str_search_str str_split str_substring str_trim
+				str_search_char str_search_rev_char str_search_str str_split str_substring str_trim \
+				str_search_set str_contains
 
 PRINTF_DIR = printf/
 PRINTF_FILES = print_format \

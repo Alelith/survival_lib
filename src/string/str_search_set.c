@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_concat.c                                       :+:      :+:    :+:   */
+/*   str_search_set.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 19:12:43 by acesteve          #+#    #+#             */
-/*   Updated: 2025/09/16 09:15:32 by bvarea-k         ###   ########.fr       */
+/*   Created: 2025/04/23 11:34:53 by acesteve          #+#    #+#             */
+/*   Updated: 2025/10/13 11:55:13 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "survival_lib.h"
 
-size_t	str_concat(char *dst, const char *src, size_t size)
+char	*str_search_set(const char *s, const char *set)
 {
-	size_t	i;
-	size_t	dst_len;
-	size_t	src_len;
-
-	i = 0;
-	dst_len = str_len(dst);
-	src_len = str_len(src);
-	if (size <= dst_len)
-		return (size + src_len);
-	while (dst_len + i < size - 1 && src[i])
+	while (set && *set)
 	{
-		dst[dst_len + i] = src[i];
-		i++;
+		if (str_search_char(s, *set))
+			return (str_search_char(s, *set));
+		set++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	return (0);
 }

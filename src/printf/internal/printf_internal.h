@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf_internal.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 22:40:25 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/25 09:54:29 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:07:06 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+# include "survival_lib.h"
 
 /**
  * @brief Prints a number in a specified format.

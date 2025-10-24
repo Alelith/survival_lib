@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   str_copy.c                                         :+:      :+:    :+:   */
+/*   str_contains.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 18:53:15 by acesteve          #+#    #+#             */
-/*   Updated: 2025/09/16 09:15:35 by bvarea-k         ###   ########.fr       */
+/*   Created: 2025/10/18 09:23:33 by acesteve          #+#    #+#             */
+/*   Updated: 2025/10/18 09:25:16 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "survival_lib.h"
 
-size_t	str_copy(char *dst, const char *src, size_t size)
+int	str_contains(char *str, char *set)
 {
-	size_t	i;
-
-	i = 0;
-	if (size != 0)
+	while (str && *str)
 	{
-		while (src[i] && i < (size - 1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		if (is_from_set(*str, set))
+			return (1);
+		str++;
 	}
-	return (str_len(src));
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mem_compare.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:37:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/20 18:09:54 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/09/16 09:15:08 by bvarea-k         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	mem_compare(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (src1[i] != src2[i])
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }

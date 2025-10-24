@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   print_format.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 22:45:17 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/25 09:38:30 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:07:25 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "survival_lib.h"
 #include "printf_internal.h"
 
 static int	proccess_format(va_list args, char format)
@@ -39,6 +38,7 @@ int	print_format(const char *format, ...)
 	va_list	args;
 	int		len;
 
+	len = 0;
 	va_start(args, format);
 	while (*format)
 	{

@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   print_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 22:48:45 by acesteve          #+#    #+#             */
-/*   Updated: 2025/08/25 09:28:13 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/24 22:06:53 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "survival_lib.h"
 #include "printf_internal.h"
 
 int	print_nbr(va_list args, char format)
