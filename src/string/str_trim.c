@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_trim.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 22:27:42 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/13 11:55:46 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:29:51 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*str_trim(char const *s1, char const *set)
 	char	*result;
 
 	if (!s1 || !set)
-		return (NULL);
+		return (0);
 	end = str_len(s1) - 1;
 	start = 0;
 	while (s1[start] && is_from_set(s1[start], set))

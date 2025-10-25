@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_split.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 23:15:38 by acesteve          #+#    #+#             */
-/*   Updated: 2025/09/16 09:15:43 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:29:47 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	*fill_arr(char **result, char *str, int wordcount, char c)
 	{
 		next = process_word(result, str, c, i);
 		if (next == -1)
-			return (NULL);
+			return (0);
 		if (str[next] == '\0')
 			str += next;
 		else
@@ -72,7 +72,7 @@ static void	*fill_arr(char **result, char *str, int wordcount, char c)
 			str++;
 		i++;
 	}
-	result[i] = NULL;
+	result[i] = 0;
 	return (result);
 }
 
@@ -88,12 +88,12 @@ char	**str_split(char const *s, char c)
 	set[1] = 0;
 	cleanstr = str_trim(s, set);
 	if (!cleanstr)
-		return (NULL);
+		return (0);
 	result = malloc(sizeof(char *) * (wordcount + 1));
 	if (!result)
 	{
 		free(cleanstr);
-		return (NULL);
+		return (0);
 	}
 	result = fill_arr(result, cleanstr, wordcount, c);
 	free(cleanstr);

@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:38:21 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 18:06:04 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,98 +108,15 @@ int				to_lower(int c);
  * @brief Functions for managing memory.
  */
 
-/**
- * @brief Allocates clean memory for an array of elements.
- * @ingroup memory_functions
- * 
- * @param nmemb The number of elements.
- * @param size The size of each element.
- * 
- * @return A pointer to the allocated memory, or NULL if the allocation failed.
- */
 void			*callocation(size_t nmemb, size_t size);
-
-/**
- * @brief Reallocates clean memory for an array of elements.
- * @ingroup memory_functions
- * 
- * @param ptr The pointer to reallocate.
- * @param new_size The new size of the memory block.
- * @param old_size Current size of the memory block.
- * 
- * @return A pointer to the allocated memory, or NULL if the allocation failed.
- */
 void			*reallocation(void *ptr, unsigned long new_size,
 					unsigned long old_size);
-
-/**
- * @brief Compares two memory blocks.
- * @ingroup memory_functions
- * 
- * @param s1 The first memory block.
- * @param s2 The second memory block.
- * @param n The number of bytes to compare.
- * 
- * @return 1 if the memory blocks are equal, 0 otherwise.
- */
 int				mem_compare(const void *s1, const void *s2, size_t n);
-
-/**
- * @brief Copies memory from one block to another.
- * @ingroup memory_functions
- * 
- * @param dest The destination memory block.
- * @param src The source memory block.
- * @param n The number of bytes to copy.
- * 
- * @return A pointer to the destination memory block.
- */
 void			*mem_copy(void *dest, const void *src, size_t n);
-
-/**
- * @brief Moves memory from one block to another.
- * @ingroup memory_functions
- * 
- * @param dest The destination memory block.
- * @param src The source memory block.
- * @param n The number of bytes to move.
- * 
- * @return A pointer to the destination memory block.
- */
+int				mem_len(void *ptr, size_t blk_size);
 void			*mem_move(void *dest, const void *src, size_t n);
-
-/**
- * @brief Searches for a character in a memory block.
- * @ingroup memory_functions
- * 
- * @param s The memory block to search.
- * @param c The character to search for.
- * @param n The number of bytes to search.
- * 
- * @return A pointer to the first occurrence of the character 
- * in the memory block, or NULL if not found.
- */
 void			*mem_search(const void *s, int c, size_t n);
-
-/**
- * @brief Sets a block of memory to a specified value.
- * 
- * 
- * @param s The memory block to set.
- * @param c The value to set the memory block to.
- * @param n The number of bytes to set.
- * 
- * @return A pointer to the memory block.
- */
 void			*mem_set(void *s, int c, size_t n);
-
-/**
- * @brief Sets a block of memory to zero.
- * @ingroup memory_functions
- * 
- * @param s The memory block to set.
- * @param n The number of bytes to set.
- */
 void			set_zero(void *s, size_t n);
 
 /*=====================================================================
@@ -351,6 +268,11 @@ char			*str_trim(char const *s1, char const *set);
 /*=====================================================================
 --------------------------- Print formatted ---------------------------
 =====================================================================*/
+
+/**
+ * @defgroup print_functions Print functions
+ * @brief Functions for printing in formats.
+ */
 
 int				print_format(const char *format, ...);
 

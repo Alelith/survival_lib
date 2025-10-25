@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_substring.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:34:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/09/16 09:15:43 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:29:49 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*str_substring(char const *s, unsigned int start, size_t len)
 		len = srclen - start;
 	result = malloc(len + 1);
 	if (!result)
-		return (NULL);
+		return (0);
 	str_copy(result, &s[start], len + 1);
 	return (result);
 }

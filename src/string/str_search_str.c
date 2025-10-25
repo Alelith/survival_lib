@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   str_search_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:40:40 by acesteve          #+#    #+#             */
-/*   Updated: 2025/09/16 09:15:41 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:29:37 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ char	*str_search_str(const char *big, const char *little, size_t len)
 		j = 0;
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

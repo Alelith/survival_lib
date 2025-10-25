@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:27:17 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:27:53 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 17:29:08 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*int_to_str(int n)
 	sign = 1;
 	result = malloc(length + 1);
 	if (!result)
-		return (NULL);
+		return (0);
 	result[length] = '\0';
 	if (n < 0)
 	{
