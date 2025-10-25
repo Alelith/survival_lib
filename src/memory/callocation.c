@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:11:14 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:27:28 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:44:32 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,19 @@
  */
 
 /**
- * @brief Allocates clean memory for an array of elements.
+ * @brief Allocates zero-initialized memory for an array of elements.
  * @ingroup memory_functions
  * 
- * @param nmemb The number of elements.
- * @param size The size of each element.
+ * Allocates memory for an array of @a nmemb elements, 
+ * each of size @a size bytes,
+ * and initializes all bytes to zero.
  * 
- * @return A pointer to the allocated memory.
+ * @param nmemb The number of elements.
+ * @param size The size of each element in bytes.
+ * 
+ * @return A pointer to the allocated zero-initialized memory.
  * @retval NULL if the allocation failed.
+ * @warning Needs to be freed with free() after use.
  */
 void	*callocation(size_t nmemb, size_t size)
 {

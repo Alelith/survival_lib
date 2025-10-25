@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:37:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:19:31 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 23:05:34 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	mem_compare(const void *s1, const void *s2, size_t n)
 	unsigned char	*src1;
 	unsigned char	*src2;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (0);
 	i = 0;
 	src1 = (unsigned char *) s1;

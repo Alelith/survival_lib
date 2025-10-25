@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:34:08 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:41:57 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@
 /**
  * @file survival_lib.h
  * @author Lilith Estévez Boeta
- * @brief Header of the standart functions on C
+ * @brief Header of the standard functions in C
  */
 
 #ifndef SURVIVAL_LIB_H

@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:02:03 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:27:44 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:43:17 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,20 @@
  */
 
 /**
- * @brief Reallocates clean memory for an array of elements.
+ * @brief Reallocates memory to a new size, copying existing data if available.
  * @ingroup memory_functions
  * 
- * @param ptr The pointer to reallocate.
- * @param new_size The new size of the memory block.
- * @param old_size Current size of the memory block.
+ * Reallocates memory to a new size. If the pointer is NULL, it allocates new
+ * memory. If new_size is 0, it frees the existing memory. Otherwise, it copies
+ * the old data to a new memory block and frees the old pointer.
  * 
- * @return A pointer to the allocated memory.
- * @retval NULL if the allocation failed.
+ * @param ptr The pointer to reallocate (can be NULL).
+ * @param new_size The new size of the memory block.
+ * @param old_size The current size of the memory block.
+ * 
+ * @return A pointer to the newly allocated memory.
+ * @retval NULL if the allocation failed or if new_size is 0.
+ * @warning The old pointer should not be used after this function is called.
  */
 void	*reallocation(void *ptr, unsigned long new_size, unsigned long old_size)
 {

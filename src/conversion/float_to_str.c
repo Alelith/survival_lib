@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 22:26:52 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:27:53 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:41:55 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
  */
 
 /**
- * @brief Get the of digits and signs that a number contains.
+ * @brief Calculates the total length needed to represent a float as a string.
  * 
- * @param nbr The number to evaluate.
- * @param decimals Decimals of accuracy.
+ * @param nbr The float number to evaluate.
+ * @param decimals The number of decimal places to include.
  * 
- * @return The length of the number.
+ * @return The total length required to represent the float as a string.
  */
 static int	float_len(float nbr, int decimals)
 {
@@ -51,12 +51,12 @@ static int	float_len(float nbr, int decimals)
 }
 
 /**
- * @brief Fills the result string with the number to convert.
+ * @brief Fills a string with the decimal representation of a float number.
  * 
- * @param result String to insert the numbers.
- * @param nbr The number to convert to string.
- * @param decimals Decimals of accuracy.
- * @param length Length of the number to convert
+ * @param result The string buffer to fill with the number representation.
+ * @param nbr The float number to convert.
+ * @param decimals The number of decimal places to include.
+ * @param length The total length of the result string.
  */
 static void	fill_float_str(char *result, float nbr, int decimals, int length)
 {
@@ -89,10 +89,11 @@ static void	fill_float_str(char *result, float nbr, int decimals, int length)
  * @brief Converts a float to a string with specified decimal places.
  * @ingroup conversion_functions
  * 
- * @param n The float to convert.
- * @param decimals The number of decimal places.
+ * @param n The float number to convert.
+ * @param decimals The number of decimal places to include in the result.
  * 
- * @return A pointer to the string representation of the float.
+ * @return A pointer to the newly allocated string representation of the float.
+ * @retval NULL if memory allocation failed.
  * @warning Needs to be freed after use.
  */
 char	*float_to_str(float n, int decimals)

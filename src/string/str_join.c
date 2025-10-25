@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 15:50:40 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:29:54 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:43:30 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@
  */
 
 /**
- * @brief Joins two strings into a new string.
+ * @brief Concatenates two strings into a new string.
  * @ingroup string_functions
  * 
- * @param s1 The first string.
- * @param s2 The second string.
+ * @param s1 The first string (can be NULL).
+ * @param s2 The second string (can be NULL).
  * 
- * @return A pointer to the new string containing the concatenation of s1 and s2.
- * @retval NULL if the allocation failed.
- * 
+ * @return A pointer to the newly allocated concatenated string.
+ * @retval NULL if both strings are NULL or if allocation failed.
  * @warning Needs to be freed after use.
  */
 char	*str_join(char const *s1, char const *s2)

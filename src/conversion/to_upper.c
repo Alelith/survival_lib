@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:32:13 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:26:50 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:42:17 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
  * 
  * @param c The character to convert.
  * 
- * @return The uppercase version of the char if is alphabetic.
- * @return The original character if is not alphabetic.
+ * @retval uppercase version of the character if it is alphabetic (a-z).
+ * @retval c unchanged if it is not alphabetic.
  */
 int	to_upper(int c)
 {

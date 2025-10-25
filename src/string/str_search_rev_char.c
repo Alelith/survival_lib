@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:35:15 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 19:02:03 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:44:56 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
  * @param c The character to search for.
  * 
  * @return A pointer to the last occurrence of the character in the string.
- * @retval NULL if the character not found.
+ * @retval NULL if the character was not found.
  */
 char	*str_search_rev_char(const char *s, int c)
 {

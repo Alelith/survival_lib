@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 09:23:33 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:56:33 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:43:33 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
  */
 
 /**
- * @brief Checks if a string contains any of the character of a set.
+ * @brief Checks if a string contains any character from a specified set.
  * @ingroup check_functions
  * 
- * @param str The string to evaluate.
- * @param set The set to evaluate
+ * @param str The string to search.
+ * @param set The set of characters to look for.
  * 
- * @retval 1 if any character on the string is in the set.
- * @retval 0 if any character on the string is not in the set.
+ * @retval 1 if the string contains at least one character from the set.
+ * @retval 0 if the string contains no characters from the set.
  */
 int	str_contains(char *str, char *set)
 {

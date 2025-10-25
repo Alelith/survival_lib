@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:35:54 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 21:59:41 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:43:32 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
  */
 
 /**
- * @brief Checks if two strings are equal in a length.
+ * @brief Compares the first @a n characters of two strings for equality.
  * @ingroup check_functions
  * 
  * @param s1 The first string.
  * @param s2 The second string.
  * @param n The maximum number of characters to compare.
  * 
- * @retval 1 if the strings are equal.
- * @retval 0 if the strings are not equal.
+ * @retval 1 if the first @a n characters of both strings are equal.
+ * @retval 0 if the strings differ or either pointer is NULL.
  */
 int	str_compare_n(const char *s1, const char *s2, size_t n)
 {

@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 12:36:26 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:31:06 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:44:18 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,15 @@
  * @brief Converts a string to an integer.
  * @ingroup conversion_functions
  * 
+ * Parses the string as a decimal integer, handling optional 
+ * leading '+' or '-' sign.
+ * Conversion stops at the first non-digit character.
+ * 
  * @param nptr The string to convert.
  * 
  * @return The integer representation of the string.
+ * @note If no digits are found, 0 is returned.
+ * @note Overflow behavior is undefined.
  */
 int	str_to_int(const char *nptr)
 {

@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 22:27:17 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 17:29:08 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:43:34 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
  */
 
 /**
- * @brief Get the of digits and signs that a number contains.
+ * @brief Calculates the number of digits and signs needed to represent a number.
  * 
  * @param nbr The number to evaluate.
  * 
- * @return The length of the number.
+ * @return The total length required to represent the number as a string.
  */
 static int	int_len(int nbr)
 {
@@ -41,12 +41,13 @@ static int	int_len(int nbr)
 }
 
 /**
- * @brief Converts an integer to a string.
+ * @brief Converts an integer to a string representation.
  * @ingroup conversion_functions
  * 
  * @param n The integer to convert.
  * 
- * @return A pointer to the string representation of the integer.
+ * @return A pointer to the newly allocated string representation of the integer.
+ * @retval NULL if memory allocation failed.
  * @warning Needs to be freed after use.
  */
 char	*int_to_str(int n)

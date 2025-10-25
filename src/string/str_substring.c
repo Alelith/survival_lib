@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:34:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:31:29 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:43:29 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,15 @@
  */
 
 /**
- * @brief Returns a substring of a string.
+ * @brief Extracts a substring from a string.
  * @ingroup string_functions
  * 
  * @param s The string to extract the substring from.
  * @param start The starting index of the substring.
- * @param len The length of the substring.
+ * @param len The length of the substring to extract.
  * 
- * @return A pointer to the substring.
+ * @return A pointer to the newly allocated substring.
  * @retval NULL if the allocation failed.
- * 
  * @warning Needs to be freed after use.
  */
 char	*str_substring(char const *s, unsigned int start, size_t len)

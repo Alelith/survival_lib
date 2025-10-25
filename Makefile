@@ -6,7 +6,7 @@
 #    By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#              #
-#    Updated: 2025/10/25 19:06:23 by acesteve         ###   ########.fr        #
+#    Updated: 2025/10/25 22:56:18 by acesteve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ CONVERSION_FILES = int_to_str uint_to_str bnum_to_str float_to_str \
 
 MEMORY_DIR = memory/
 MEMORY_FILES = callocation reallocation mem_compare mem_copy mem_move \
-				mem_search mem_set set_zero
+				mem_search mem_set set_zero mem_len
 
 STRING_DIR = string/
 STRING_FILES = str_concat str_copy str_duplicate str_join str_len \
