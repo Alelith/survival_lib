@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:36:44 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:31:31 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:27:39 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@
  * @param c The character to search for.
  * @param n The number of bytes to search.
  * 
- * @return A pointer to the first occurrence of the character 
- * in the memory block, or NULL if not found.
+ * @return A pointer to the first occurrence of the character in 
+ * the memory block.
+ * @retval NULL if the character not found.
  */
 void	*mem_search(const void *s, int c, size_t n)
 {

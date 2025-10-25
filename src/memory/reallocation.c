@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/09 16:02:03 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 17:32:59 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:27:44 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
  * @param new_size The new size of the memory block.
  * @param old_size Current size of the memory block.
  * 
- * @retval A pointer to the allocated memory.
+ * @return A pointer to the allocated memory.
  * @retval NULL if the allocation failed.
  */
 void	*reallocation(void *ptr, unsigned long new_size, unsigned long old_size)

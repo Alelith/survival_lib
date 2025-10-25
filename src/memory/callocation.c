@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 13:11:14 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 17:31:22 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:27:28 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
  * @param nmemb The number of elements.
  * @param size The size of each element.
  * 
- * @retval A pointer to the allocated memory.
+ * @return A pointer to the allocated memory.
  * @retval NULL if the allocation failed.
  */
 void	*callocation(size_t nmemb, size_t size)

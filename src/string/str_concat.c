@@ -3,15 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   str_concat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvarea-k <bvarea-k@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 19:12:43 by acesteve          #+#    #+#             */
-/*   Updated: 2025/09/16 09:15:32 by bvarea-k         ###   ########.fr       */
+/*   Updated: 2025/10/25 18:41:25 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "survival_lib.h"
 
+/**
+ * @file str_concat.c
+ * @author Lilith Estévez Boeta
+ * @brief This file contains the implementation of the str_concat function.
+ */
+
+/**
+ * @brief Concatenates two strings.
+ * @ingroup string_functions
+ * 
+ * @param dst The destination string.
+ * @param src The source string.
+ * @param size The size of the destination buffer.
+ * 
+ * @return The total length of the string it tried to create.
+ */
 size_t	str_concat(char *dst, const char *src, size_t size)
 {
 	size_t	i;

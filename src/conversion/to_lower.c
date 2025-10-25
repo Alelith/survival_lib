@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 11:33:36 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:39:44 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:27:07 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
  * 
  * @param c The character to convert.
  * 
- * @retval The lowercase version of the char if is alphabetic.
- * @retval The original character if is not alphabetic.
+ * @return The lowercase version of the char if is alphabetic.
+ * @return The original character if is not alphabetic.
  */
 int	to_lower(int c)
 {

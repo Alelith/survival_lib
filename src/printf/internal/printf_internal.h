@@ -6,9 +6,15 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 22:40:25 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:05:56 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/25 22:33:55 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file printf_internal.h
+ * @author Lilith Estévez Boeta
+ * @brief Header of the functions that print_format need
+ */
 
 #ifndef PRINTF_INTERNAL_H
 # define PRINTF_INTERNAL_H
