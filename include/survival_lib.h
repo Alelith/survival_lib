@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:41:57 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/26 10:03:17 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <unistd.h>
 
 /*=====================================================================
 --------------------------- Check functions ---------------------------
@@ -149,9 +151,20 @@ char			*str_trim(char const *s1, char const *set);
 
 /**
  * @defgroup print_functions Print functions
- * @brief Functions for printing in formats.
+ * @brief Function for printing in a specified format.
  */
 
 int				print_format(const char *format, ...);
+
+/*=====================================================================
+---------------------------- Get next line ----------------------------
+=====================================================================*/
+
+/**
+ * @defgroup get_next_line Get Next Line
+ * @brief Function to read a line from a file descriptor.
+ */
+
+char			*get_next_line(int fd);
 
 #endif

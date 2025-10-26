@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 23:15:38 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 23:24:29 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/26 10:02:33 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	free_split_array(char **res, int len)
  * 
  * @return The reallocated array, or NULL on error.
  */
-static char	**add_word(char **res, char const *s, int i, char c, int *len)
+static char	**add_word(char **res, char const *s, char c, int *len)
 {
 	char	**tmp;
 	char	*word_end;
@@ -70,11 +70,11 @@ static char	**add_word(char **res, char const *s, int i, char c, int *len)
 	if (!tmp)
 		return (NULL);
 	res = tmp;
-	word_end = str_search_char(&s[i], c);
+	word_end = str_search_char(s, c);
 	if (word_end)
-		res[*len] = str_substring(&s[i], 0, word_end - &s[i]);
+		res[*len] = str_substring(s, 0, word_end - s);
 	else
-		res[*len] = str_substring(&s[i], 0, str_len(&s[i]));
+		res[*len] = str_substring(s, 0, str_len(s));
 	if (!res[*len])
 		return (NULL);
 	(*len)++;
@@ -93,7 +93,7 @@ static char	**add_word(char **res, char const *s, int i, char c, int *len)
  */
 static int	split_loop(char const *s, char c, char ***res, int *len)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (s[i])
@@ -102,7 +102,7 @@ static int	split_loop(char const *s, char c, char ***res, int *len)
 			i++;
 		if (!s[i])
 			break ;
-		*res = add_word(*res, s, i, c, len);
+		*res = add_word(*res, &s[i], c, len);
 		if (!*res)
 			return (-1);
 		i += word_len(&s[i], c);

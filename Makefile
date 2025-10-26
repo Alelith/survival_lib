@@ -6,7 +6,7 @@
 #    By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/22 11:29:11 by acesteve          #+#    #+#              #
-#    Updated: 2025/10/25 22:56:18 by acesteve         ###   ########.fr        #
+#    Updated: 2025/10/26 01:07:47 by acesteve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,11 +50,15 @@ STRING_FILES = str_concat str_copy str_duplicate str_join str_len \
 PRINTF_DIR = printf/
 PRINTF_FILES = print_format internal/print_nbr internal/print_str
 
+GNL_DIR = gnl/
+GNL_FILES = get_next_line
+
 SRC_FILES += $(addprefix $(CHECK_DIR), $(CHECK_FILES))
 SRC_FILES += $(addprefix $(CONVERSION_DIR), $(CONVERSION_FILES))
 SRC_FILES += $(addprefix $(MEMORY_DIR), $(MEMORY_FILES))
 SRC_FILES += $(addprefix $(STRING_DIR), $(STRING_FILES))
 SRC_FILES += $(addprefix $(PRINTF_DIR), $(PRINTF_FILES))
+SRC_FILES += $(addprefix $(GNL_DIR), $(GNL_FILES))
 
 SRCS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -83,6 +87,7 @@ $(OBJSF):
 	@mkdir -p $(OBJ_DIR)$(STRING_DIR)
 	@mkdir -p $(OBJ_DIR)$(PRINTF_DIR)
 	@mkdir -p $(OBJ_DIR)$(PRINTF_DIR)internal/
+	@mkdir -p $(OBJ_DIR)$(GNL_DIR)
 
 clean:
 	@echo "$(RED)Cleaning obj files$(DEF_COLOR)"

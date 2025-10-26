@@ -6,7 +6,7 @@
 /*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 22:25:29 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:35:51 by acesteve         ###   ########.fr       */
+/*   Updated: 2025/10/26 10:15:01 by acesteve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@
  * 
  * @return The decimal representation on the string.
  */
-static float	parse_decimal(const char **nptr)
+static float	parse_decimal(const char *nptr)
 {
 	float	result;
 	float	decimal_place;
 
 	result = 0.0f;
 	decimal_place = 0.1f;
-	while (**nptr && **nptr >= '0' && **nptr <= '9')
+	while (*nptr && *nptr >= '0' && *nptr <= '9')
 	{
-		result += (**nptr - '0') * decimal_place;
+		result += (*nptr - '0') * decimal_place;
 		decimal_place *= 0.1f;
-		(*nptr)++;
+		nptr++;
 	}
 	return (result);
 }
@@ -69,7 +69,7 @@ float	str_to_float(const char *nptr)
 	if (*nptr == '.')
 	{
 		nptr++;
-		result += parse_decimal(&nptr);
+		result += parse_decimal(nptr);
 	}
 	return (result * sign);
 }
