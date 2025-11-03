@@ -419,7 +419,7 @@ int main(void)
 
 La documentación completa del código está generada con Doxygen. Puedes consultarla en:
 
-🔗 **[Documentación del Código](DOCUMENTACION)** *(pendiente de publicar)*
+🔗 **[Documentación del Código](https://alelith.github.io/survival_lib-documentation/)**
 
 Para generar la documentación localmente:
 ```bash

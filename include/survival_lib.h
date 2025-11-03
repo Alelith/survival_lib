@@ -22,12 +22,12 @@
  * with minimal dependencies, ensuring flexibility and ease of integration.
  * The header file provides a unified interface to all modules.
  *
- * @ref check_functions Check Functions Module
- * @ref conversion_functions Conversion Functions Module
- * @ref memory_functions Memory Functions Module
- * @ref string_functions String Functions Module
- * @ref print_functions Print Functions Module
- * @ref get_next_line Get Next Line Module
+ * - @ref check_functions Check Functions Module
+ * - @ref conversion_functions Conversion Functions Module
+ * - @ref memory_functions Memory Functions Module
+ * - @ref string_functions String Functions Module
+ * - @ref print_functions Print Functions Module
+ * - @ref get_next_line Get Next Line Module
  *
  * @section implementation_sec Implementation
  * All functions are implemented in standard C (C99) with no external
@@ -52,7 +52,7 @@
  * @endcode
  * Compile your program with the library:
  * @code
- * gcc -o program program.c -L. -lsurvival
+ * gcc -o program program.c survivalib.a
  * @endcode
  *
  * @section contrib_sec Contributing
