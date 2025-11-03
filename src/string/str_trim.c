@@ -1,33 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_trim.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 22:27:42 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:43:23 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_trim.c
+ * @brief Implementation of string trimming with custom character set
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_trim function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Removes leading and trailing characters from a string.
+ * @brief Removes leading and trailing characters from a string
+ *
+ * @details Creates a new string with all leading and trailing characters
+ * that appear in the 'set' parameter removed from the source string. Only
+ * characters at the beginning and end are removed; internal characters are
+ * preserved. Returns NULL if either input pointer is NULL or if allocation fails.
+ *
  * @ingroup string_functions
- * 
- * @param s1 The string to trim.
- * @param set The set of characters to remove from the beginning and end.
- * 
- * @return A pointer to the trimmed string (newly allocated).
- * @retval NULL if the allocation failed.
- * @warning Needs to be freed after use.
+ *
+ * @param[in] s1 Null-terminated string to trim
+ * @param[in] set Null-terminated string containing characters to remove
+ *
+ * @return Pointer to newly allocated trimmed string
+ * @retval NULL Either input is NULL or memory allocation failed
+ *
+ * @warning The returned string must be freed by the caller to prevent memory leaks
  */
 char	*str_trim(char const *s1, char const *set)
 {

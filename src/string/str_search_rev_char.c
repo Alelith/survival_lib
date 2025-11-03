@@ -1,33 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_search_rev_char.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 11:35:15 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:44:56 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_search_rev_char.c
+ * @brief Implementation of reverse character search in string
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_search_rev_char 
- * function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Searches for the last occurrence of a character in a string.
+ * @brief Locates the last occurrence of a character in a string
+ *
+ * @details Searches the string from right to left for the last occurrence
+ * of the specified character. The character c is taken modulo 256 to ensure
+ * it fits in a char. Special handling for null terminator: returns pointer
+ * to the null byte. Searches backwards from the end of the string to the
+ * beginning.
+ *
  * @ingroup string_functions
- * 
- * @param s The string to search.
- * @param c The character to search for.
- * 
- * @return A pointer to the last occurrence of the character in the string.
- * @retval NULL if the character was not found.
+ *
+ * @param[in] s Null-terminated string to search
+ * @param[in] c Character to locate (converted to char via modulo 256)
+ *
+ * @return Pointer to the last occurrence of c in s
+ * @retval NULL Character not found in string
  */
 char	*str_search_rev_char(const char *s, int c)
 {

@@ -1,32 +1,31 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_copy.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 18:53:15 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:49:57 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_copy.c
+ * @brief Implementation of size-bounded string copy operation
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_copy function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Copies a string to a destination buffer.
+ * @brief Copies source string to destination with size limit
+ *
+ * @details Safely copies up to size-1 characters from src to dst, always
+ * null-terminating the result if size is greater than 0. Returns the length
+ * of src to allow detection of truncation. Returns 0 if either pointer is
+ * NULL and size is greater than 0.
+ *
  * @ingroup string_functions
- * 
- * @param dst The destination buffer.
- * @param src The source string.
- * @param size The size of the destination buffer.
- * 
- * @return The total length of the string it tried to create.
+ *
+ * @param[out] dst Destination buffer to receive the string
+ * @param[in] src Source null-terminated string to copy
+ * @param[in] size Total size of destination buffer
+ *
+ * @return Length of the source string
+ * @retval 0 If src or dst is NULL and size > 0
+ *
+ * @warning Ensure dst buffer has size bytes allocated
  */
 size_t	str_copy(char *dst, const char *src, size_t size)
 {

@@ -1,32 +1,31 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mem_move.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:22:20 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:31:21 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file mem_move.c
+ * @brief Implementation of safe memory move for overlapping regions
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the mem_move function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Moves memory from one block to another.
+ * @brief Safely moves n bytes from source to destination, handling overlaps
+ *
+ * @details Copies n bytes from source to destination memory, correctly handling
+ * cases where the regions overlap. If destination is within the source region,
+ * copies backwards to prevent data corruption. Otherwise, uses forward copy.
+ * Returns NULL if either pointer is NULL and n is greater than 0.
+ *
  * @ingroup memory_functions
- * 
- * @param dest The destination memory block.
- * @param src The source memory block.
- * @param n The number of bytes to move.
- * 
- * @return A pointer to the destination memory block.
+ *
+ * @param[out] dest Pointer to the destination memory block
+ * @param[in] src Pointer to the source memory block
+ * @param[in] n Number of bytes to move
+ *
+ * @return Pointer to the destination memory block
+ * @retval NULL Either dest or src is NULL and n > 0
+ *
+ * @note Unlike mem_copy, this function handles overlapping regions safely
  */
 void	*mem_move(void *dest, const void *src, size_t n)
 {

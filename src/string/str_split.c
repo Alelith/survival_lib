@@ -1,30 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_split.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/24 23:15:38 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/26 10:02:33 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_split.c
+ * @brief Implementation of string tokenization by delimiter
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_split function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Helper function to calculate the length of a word until the delimiter.
- * 
- * @param s The string to analyze.
- * @param c The delimiter character.
- * 
- * @return The length of the word.
+ * @brief Calculates the length of a word up to the delimiter
+ *
+ * @details Counts characters from the current position until the delimiter
+ * character or null terminator is encountered.
+ *
+ * @param[in] s String to analyze
+ * @param[in] c Delimiter character
+ *
+ * @return Length of the word in characters
  */
 static int	word_len(char const *s, char c)
 {
@@ -37,10 +30,13 @@ static int	word_len(char const *s, char c)
 }
 
 /**
- * @brief Helper function to free all strings in an array.
- * 
- * @param res The array of strings to free.
- * @param len The number of strings to free.
+ * @brief Frees all allocated strings in the split result array
+ *
+ * @details Iterates through the array and frees each string, then frees
+ * the array itself. Used for cleanup on allocation failure.
+ *
+ * @param[in] res Array of allocated strings
+ * @param[in] len Number of strings to free
  */
 static void	free_split_array(char **res, int len)
 {
@@ -50,15 +46,19 @@ static void	free_split_array(char **res, int len)
 }
 
 /**
- * @brief Helper function to allocate and add a word to the result array.
- * 
- * @param res The result array (will be reallocated).
- * @param s The source string.
- * @param i The index in the source string.
- * @param c The delimiter character.
- * @param len Pointer to the current number of elements.
- * 
- * @return The reallocated array, or NULL on error.
+ * @brief Extracts a word and adds it to the result array
+ *
+ * @details Reallocates the result array to accommodate a new word, extracts
+ * the substring from the source string up to the delimiter or end, and stores
+ * it in the array. Updates the length counter.
+ *
+ * @param[in] res Current result array
+ * @param[in] s Position in source string where word starts
+ * @param[in] c Delimiter character
+ * @param[in,out] len Pointer to current array length (incremented on success)
+ *
+ * @return Reallocated array with new word added
+ * @retval NULL Reallocation or substring extraction failed
  */
 static char	**add_word(char **res, char const *s, char c, int *len)
 {
@@ -82,14 +82,20 @@ static char	**add_word(char **res, char const *s, char c, int *len)
 }
 
 /**
- * @brief Helper function to process the main splitting loop.
- * 
- * @param s The source string.
- * @param c The delimiter character.
- * @param res Pointer to the result array pointer.
- * @param len Pointer to the current number of elements.
- * 
- * @return 0 on success, -1 on error.
+ * @brief Main loop that processes string and extracts all words
+ *
+ * @details Iterates through the source string, skipping consecutive delimiters
+ * and extracting each word found between delimiters. Updates the result array
+ * and length counter as words are added.
+ *
+ * @param[in] s Source string to split
+ * @param[in] c Delimiter character
+ * @param[in,out] res Pointer to result array pointer
+ * @param[in,out] len Pointer to array length counter
+ *
+ * @return Status code
+ * @retval 0 Success
+ * @retval -1 Allocation error occurred
  */
 static int	split_loop(char const *s, char c, char ***res, int *len)
 {
@@ -111,15 +117,22 @@ static int	split_loop(char const *s, char c, char ***res, int *len)
 }
 
 /**
- * @brief Splits a string into an array of strings based on a delimiter.
+ * @brief Splits a string into an array of substrings using a delimiter
+ *
+ * @details Tokenizes the input string by the delimiter character, creating
+ * a null-terminated array of dynamically allocated substrings. Consecutive
+ * delimiters are treated as a single separator (empty tokens are not created).
+ * The result array and all contained strings must be freed individually.
+ *
  * @ingroup string_functions
- * 
- * @param s The string to split.
- * @param c The delimiter character.
- * 
- * @return An array of strings (NULL-terminated) where the string was split.
- * @retval NULL if the allocation failed.
- * @warning Needs to be freed after use, including each string in the array.
+ *
+ * @param[in] s Null-terminated string to split
+ * @param[in] c Delimiter character
+ *
+ * @return Null-terminated array of substring pointers
+ * @retval NULL Source string is NULL or memory allocation failed
+ *
+ * @warning Both the array and each string within must be freed by the caller
  */
 char	**str_split(char const *s, char c)
 {

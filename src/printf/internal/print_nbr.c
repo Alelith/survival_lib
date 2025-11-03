@@ -1,31 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   print_nbr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/24 22:48:45 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:01:32 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "printf_internal.h"
 
 /**
  * @file print_nbr.c
+ * @brief Internal implementation of numeric value printing for print_format
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the print_nbr function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Prints a number in a specified format.
+ * @brief Converts and prints a numeric value according to format specifier
+ *
+ * @details Extracts a numeric value from the argument list, converts it to
+ * string representation based on the format specifier, and outputs it. Supports
+ * signed integers (d, i), unsigned integers (u), hexadecimal (x, X), pointers (p),
+ * floating-point (f), and octal (o). Handles memory allocation and cleanup for
+ * converted strings. Pointer format includes "0x" prefix.
+ *
  * @ingroup print_functions
- * 
- * @param args The argument list containing the value to print.
- * @param format The format specifier ('d', 'i', 'u', 'x', 'X', 'p', 'f', 'o').
- * 
- * @return The number of characters printed.
+ *
+ * @param[in] args Variable argument list containing the numeric value
+ * @param[in] format Format specifier character (d, i, u, x, X, p, f, o)
+ *
+ * @return Number of characters printed to output
+ * @retval 0 String conversion failed (allocation error)
  */
 int	print_nbr(va_list args, char format)
 {

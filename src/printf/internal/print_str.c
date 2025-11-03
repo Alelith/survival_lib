@@ -1,31 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/24 22:46:43 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:04:37 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "printf_internal.h"
 
 /**
  * @file print_str.c
+ * @brief Internal implementation of string and character printing for print_format
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the print_str function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Prints a string or a char.
+ * @brief Outputs a string or single character to standard output
+ *
+ * @details Prints either a complete null-terminated string or a single character
+ * to file descriptor 1 (stdout). If str is non-NULL, prints the entire string;
+ * otherwise, if c is non-zero, prints the single character. Returns the number
+ * of characters written.
+ *
  * @ingroup print_functions
- * 
- * @param str The string to print.
- * @param c The char to print.
- * 
- * @return The number of characters printed.
+ *
+ * @param[in] str Null-terminated string to print (may be NULL)
+ * @param[in] c Single character to print (used if str is NULL and c is non-zero)
+ *
+ * @return Number of characters written to output
+ * @retval 0 Both str is NULL and c is 0
  */
 int	print_str(const char *str, char c)
 {

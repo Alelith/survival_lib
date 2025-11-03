@@ -1,34 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mem_search.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 11:36:44 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:44:45 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file mem_search.c
+ * @brief Implementation of byte search within memory block
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the mem_search function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Searches for a character in a memory block.
+ * @brief Searches for the first occurrence of a byte in a memory block
+ *
+ * @details Performs a linear search through the first n bytes of the memory
+ * block, looking for the first occurrence of the specified byte value. The
+ * integer c is converted to unsigned char before comparison. Returns a pointer
+ * to the first match, or NULL if not found or if the pointer is NULL.
+ *
  * @ingroup memory_functions
- * 
- * @param s The memory block to search.
- * @param c The character to search for.
- * @param n The number of bytes to search.
- * 
- * @return A pointer to the first occurrence of the character 
- * in the memory block.
- * @retval NULL if the character was not found.
+ *
+ * @param[in] s Pointer to the memory block to search
+ * @param[in] c Byte value to search for (converted to unsigned char)
+ * @param[in] n Number of bytes to search
+ *
+ * @return Pointer to the first occurrence of the byte
+ * @retval NULL Byte not found within n bytes, or s is NULL
  */
 void	*mem_search(const void *s, int c, size_t n)
 {

@@ -1,31 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   bnum_to_str.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/24 23:00:35 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:29:20 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file bnum_to_str.c
+ * @brief Implementation of arbitrary base number to string conversion
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the bnum_to_str function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Get the of digits and signs that a number contains.
- * 
- * @param nbr The number to evaluate.
- * @param base The base for conversion (e.g., 2 for binary, 10 for decimal,
- *  16 for hexadecimal).
- * 
- * @return The length of the number.
+ * @brief Calculates the string length needed for a number in a given base
+ *
+ * @details Computes the number of digits required to represent an integer
+ * in the specified base (binary, decimal, hexadecimal, etc.). Uses repeated
+ * division by the base to count digits.
+ *
+ * @param[in] nbr The number to evaluate
+ * @param[in] base The numeric base (2-16)
+ *
+ * @return The total number of digits needed in the specified base
  */
 static int	bnum_len(int nbr, int base)
 {
@@ -43,17 +36,23 @@ static int	bnum_len(int nbr, int base)
 }
 
 /**
- * @brief Converts an integer to a string in a specified base.
+ * @brief Converts an integer to string representation in arbitrary base
+ *
+ * @details Allocates and generates a null-terminated string containing the
+ * representation of the given integer in the specified base (2-16). Supports
+ * binary, octal, decimal, and hexadecimal conversions. Letters A-F can be
+ * rendered in uppercase or lowercase for bases greater than 10.
+ *
  * @ingroup conversion_functions
- * 
- * @param n The integer to convert.
- * @param base The base for conversion (e.g., 2 for binary, 10 for decimal,
- *  16 for hexadecimal).
- * @param is_upper If non-zero, use uppercase letters for bases greater than 10.
- * 
- * @return A pointer to the string representation of the integer in
- *  the specified base.
- * @warning Needs to be freed after use.
+ *
+ * @param[in] n The integer to convert
+ * @param[in] base The target base (2-16) for conversion
+ * @param[in] is_upper If non-zero, use uppercase letters (A-F) for bases > 10
+ *
+ * @return Pointer to the newly allocated string in the specified base
+ * @retval NULL Memory allocation failed
+ *
+ * @warning The returned string must be freed by the caller to prevent memory leaks
  */
 char	*bnum_to_str(int n, int base, int is_upper)
 {

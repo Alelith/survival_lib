@@ -1,32 +1,31 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mem_copy.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:19:01 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:19:46 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file mem_copy.c
+ * @brief Implementation of non-overlapping memory copy operation
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the mem_copy function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Copies memory from one block to another.
+ * @brief Copies n bytes from source to destination memory
+ *
+ * @details Performs a byte-by-byte copy of n bytes from the source memory
+ * region to the destination memory region. The memory regions must not overlap;
+ * use mem_move() for overlapping regions. Returns NULL if either pointer is
+ * NULL and n is greater than 0.
+ *
  * @ingroup memory_functions
- * 
- * @param dest The destination memory block.
- * @param src The source memory block.
- * @param n The number of bytes to copy.
- * 
- * @return A pointer to the destination memory block.
+ *
+ * @param[out] dest Pointer to the destination memory block
+ * @param[in] src Pointer to the source memory block
+ * @param[in] n Number of bytes to copy
+ *
+ * @return Pointer to the destination memory block
+ * @retval NULL Either dest or src is NULL and n > 0
+ *
+ * @warning Source and destination must not overlap; use mem_move() for overlapping regions
  */
 void	*mem_copy(void *dest, const void *src, size_t n)
 {

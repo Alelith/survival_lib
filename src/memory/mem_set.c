@@ -1,32 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mem_set.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:16:55 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:00:26 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file mem_set.c
+ * @brief Implementation of memory block initialization with specific byte value
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the mem_set function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Sets a block of memory to a specified value.
+ * @brief Fills a memory block with a specified byte value
+ *
+ * @details Sets each of the first n bytes of the memory block to the specified
+ * value c (converted to unsigned char). Fills the memory backwards from the
+ * last byte to the first. Returns the original pointer to the memory block,
+ * or NULL if s is NULL.
+ *
  * @ingroup memory_functions
- * 
- * @param s The memory block to set.
- * @param c The value to set the memory block to.
- * @param n The number of bytes to set.
- * 
- * @return A pointer to the memory block.
+ *
+ * @param[out] s Pointer to the memory block to fill
+ * @param[in] c Byte value to set (converted to unsigned char)
+ * @param[in] n Number of bytes to set
+ *
+ * @return Pointer to the memory block
+ * @retval NULL If s is NULL
  */
 void	*mem_set(void *s, int c, size_t n)
 {

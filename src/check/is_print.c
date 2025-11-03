@@ -1,29 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   is_print.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:13:27 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 21:56:06 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 /**
  * @file is_print.c
+ * @brief Implementation of the is_print character validation function
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the is_print function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Checks if the character is a printable character.
+ * @brief Checks if a character is printable
+ *
+ * @details Determines whether the given character is a printable ASCII
+ * character. Printable characters include all visible characters plus the
+ * space character, corresponding to ASCII values 32-126. This range excludes
+ * control characters and non-printable symbols.
+ *
  * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @retval 1 if the character is printable.
- * @retval 0 if the character is not printable.
+ *
+ * @param[in] c The character to validate (as integer ASCII value)
+ *
+ * @return Integer indicating the result of the validation
+ * @retval 1 The character is printable (ASCII 32-126)
+ * @retval 0 The character is not printable
  */
 int	is_print(int c)
 {

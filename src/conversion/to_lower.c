@@ -1,29 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   to_lower.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 11:33:36 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:42:14 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 /**
  * @file to_lower.c
+ * @brief Implementation of uppercase to lowercase character conversion
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the to_lower function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Converts a character to lowercase.
+ * @brief Converts an uppercase letter to lowercase
+ *
+ * @details Transforms uppercase ASCII letters (A-Z) to their lowercase
+ * equivalents (a-z) by adding 32 to the ASCII value. Non-uppercase characters
+ * are returned unchanged. This function only affects English alphabet letters.
+ *
  * @ingroup conversion_functions
- * 
- * @param c The character to convert.
- * 
- * @retval lowercase version of the character if it is alphabetic (A-Z).
- * @retval c unchanged if it is not alphabetic.
+ *
+ * @param[in] c The character to convert (as integer ASCII value)
+ *
+ * @return The converted character
+ * @retval lowercase The lowercase equivalent if c is uppercase (A-Z)
+ * @retval c The original character if not uppercase
  */
 int	to_lower(int c)
 {

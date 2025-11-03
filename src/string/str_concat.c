@@ -1,32 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_concat.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 19:12:43 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:41:25 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_concat.c
+ * @brief Implementation of size-bounded string concatenation
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_concat function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Concatenates two strings.
+ * @brief Appends source string to destination with size limit
+ *
+ * @details Safely concatenates src to the end of dst, ensuring the result
+ * fits within the destination buffer of size bytes (including null terminator).
+ * Returns the total length that would have been created if there was sufficient
+ * space. If size is less than or equal to dst length, no concatenation occurs.
+ *
  * @ingroup string_functions
- * 
- * @param dst The destination string.
- * @param src The source string.
- * @param size The size of the destination buffer.
- * 
- * @return The total length of the string it tried to create.
+ *
+ * @param[in,out] dst Destination buffer containing initial null-terminated string
+ * @param[in] src Source null-terminated string to append
+ * @param[in] size Total size of destination buffer
+ *
+ * @return Total length of string attempted to create (dst_len + src_len)
+ *
+ * @warning Ensure dst buffer has size bytes allocated
  */
 size_t	str_concat(char *dst, const char *src, size_t size)
 {

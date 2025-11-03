@@ -1,30 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   print_format.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/24 22:45:17 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:32:10 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "printf_internal.h"
 
 /**
- * @file print_nbr.c
+ * @file print_format.c
+ * @brief Implementation of custom formatted output function
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the print_nbr function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Switch the specified format to print.
- * 
- * @param args Variadric list with the data to format.
- * @param format Type of format that will be represented.
- * 
- * @return The amount of characters printed.
+ * @brief Processes a format specifier and prints the corresponding argument
+ *
+ * @details Examines the format character and dispatches to the appropriate
+ * printing function for numbers, strings, or characters. Supports various
+ * format specifiers including integers, unsigned, hex, pointers, floats,
+ * octal, strings, and characters.
+ *
+ * @param[in] args Variable argument list containing values to format
+ * @param[in] format Format specifier character
+ *
+ * @return Number of characters printed
  */
 static int	proccess_format(va_list args, char format)
 {
@@ -44,12 +39,16 @@ static int	proccess_format(va_list args, char format)
 }
 
 /**
- * @brief Checks if the format specified is valid.
- * 
- * @param format The format to evaluate.
- * 
- * @retval 1 if the format is valid.
- * @retval 0 if the format is not valid.
+ * @brief Validates a format specifier character
+ *
+ * @details Checks if the given character is a recognized format specifier
+ * such as d, i, u, x, X, p, f, o, s, c, or the literal % character.
+ *
+ * @param[in] format Format character to validate
+ *
+ * @return Validation result
+ * @retval 1 Format specifier is valid
+ * @retval 0 Format specifier is not recognized
  */
 static int	is_valid_format(char format)
 {
@@ -60,12 +59,20 @@ static int	is_valid_format(char format)
 }
 
 /**
- * @brief Print a string with the data in the specified format to standar output.
+ * @brief Formats and prints a string with variable arguments to standard output
+ *
+ * @details Parses a format string containing text and format specifiers,
+ * replacing each specifier with the corresponding argument from the variable
+ * argument list. Format specifiers begin with % followed by a type character.
+ * Literal % characters can be printed with %%. Outputs directly to file
+ * descriptor 1 (stdout).
+ *
  * @ingroup print_functions
- * 
- * @param format The string of the format that will be printed.
- * 
- * @return The amount of character printed
+ *
+ * @param[in] format Null-terminated format string with specifiers
+ * @param[in] ... Variable arguments corresponding to format specifiers
+ *
+ * @return Total number of characters written to output
  */
 int	print_format(const char *format, ...)
 {

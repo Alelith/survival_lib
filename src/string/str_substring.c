@@ -1,35 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_substring.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 13:34:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:43:29 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 #include <stdlib.h>
 
 /**
  * @file str_substring.c
+ * @brief Implementation of substring extraction with dynamic allocation
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_substring function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Extracts a substring from a string.
+ * @brief Extracts a substring from a string with dynamic allocation
+ *
+ * @details Allocates and returns a new string containing up to 'len' characters
+ * starting from index 'start' of the source string. If 'start' is beyond the
+ * string length, returns an empty string. If 'len' extends past the string end,
+ * only copies available characters. The result is always null-terminated.
+ *
  * @ingroup string_functions
- * 
- * @param s The string to extract the substring from.
- * @param start The starting index of the substring.
- * @param len The length of the substring to extract.
- * 
- * @return A pointer to the newly allocated substring.
- * @retval NULL if the allocation failed.
- * @warning Needs to be freed after use.
+ *
+ * @param[in] s Source null-terminated string
+ * @param[in] start Starting index for extraction (0-based)
+ * @param[in] len Maximum number of characters to extract
+ *
+ * @return Pointer to newly allocated substring
+ * @retval NULL Memory allocation failed
+ *
+ * @warning The returned string must be freed by the caller to prevent memory leaks
  */
 char	*str_substring(char const *s, unsigned int start, size_t len)
 {

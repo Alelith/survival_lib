@@ -1,31 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_duplicate.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 13:16:25 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:51:29 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_duplicate.c
+ * @brief Implementation of string duplication with dynamic allocation
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_duplicate function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Create a duplicate of a string.
+ * @brief Creates an independent copy of a string with dynamic allocation
+ *
+ * @details Allocates memory for a new string and copies the contents of the
+ * source string into it, including the null terminator. Returns NULL if the
+ * source pointer is NULL or if memory allocation fails.
+ *
  * @ingroup string_functions
- * 
- * @param s The string to duplicate.
- * 
- * @return A pointer to the duplicated string, or NULL if the allocation failed.
- * Needs to be freed after use.
+ *
+ * @param[in] s Null-terminated string to duplicate
+ *
+ * @return Pointer to the newly allocated duplicate string
+ * @retval NULL Source string is NULL or memory allocation failed
+ *
+ * @warning The returned string must be freed by the caller to prevent memory leaks
  */
 char	*str_duplicate(const char *s)
 {

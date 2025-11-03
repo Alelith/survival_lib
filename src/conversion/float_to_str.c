@@ -1,30 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   float_to_str.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/24 22:26:52 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/26 10:23:19 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file float_to_str.c
+ * @brief Implementation of floating-point to string conversion
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the float_to_str function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Calculates the total length needed to represent a float as a string.
- * 
- * @param nbr The float number to evaluate.
- * @param decimals The number of decimal places to include.
- * 
- * @return The total length required to represent the float as a string.
+ * @brief Calculates the string length needed for a floating-point number
+ *
+ * @details Computes the total character count including the sign (if negative),
+ * all integer digits, the decimal point, and the specified number of decimal
+ * places. Handles negative numbers and zero appropriately.
+ *
+ * @param[in] nbr The floating-point number to evaluate
+ * @param[in] decimals The number of decimal places to include
+ *
+ * @return The total character count needed for string representation
  */
 static int	float_len(float nbr, int decimals)
 {
@@ -51,15 +45,19 @@ static int	float_len(float nbr, int decimals)
 }
 
 /**
- * @brief Fill the decimal digits (left-to-right) and place the decimal point.
- * 
- * @param result The string to fill.
- * @param frac_part The fractional part of the float number.
- * @param decimals The number of decimal places to include.
- * @param length The total length of the resulting string.
- * 
- * @return The index of the last position available for the integer part
- * (i.e. position where the least-significant integer digit should be placed).
+ * @brief Fills the decimal portion of the float string representation
+ *
+ * @details Converts the fractional part to decimal digits by repeatedly
+ * multiplying by 10 and extracting the integer portion. Places the decimal
+ * point before the fractional digits. Returns the position where integer
+ * digit insertion should end.
+ *
+ * @param[out] result The string buffer to fill
+ * @param[in] frac_part The fractional component (0.0 to 1.0)
+ * @param[in] decimals Number of decimal places to generate
+ * @param[in] length Total string length
+ *
+ * @return Index where the least significant integer digit should be placed
  */
 static int	fill_decimal_part(char *result, float frac_part,
 					int decimals, int length)
@@ -83,11 +81,15 @@ static int	fill_decimal_part(char *result, float frac_part,
 }
 
 /**
- * @brief Fill the integer digits right-to-left into result ending at end_idx.
- * 
- * @param result The string to fill.
- * @param int_part The integer part of the float number.
- * @param end_idx The ending index in the string to start filling from.
+ * @brief Fills the integer portion of the float string representation
+ *
+ * @details Converts the integer part to decimal digits by extracting through
+ * modulo and division operations. Builds the digits from right to left,
+ * starting at the specified index position.
+ *
+ * @param[out] result The string buffer to fill
+ * @param[in] int_part The integer component
+ * @param[in] end_idx The rightmost position for integer digits
  */
 static void	fill_integer_part(char *result, int int_part, int end_idx)
 {
@@ -105,12 +107,17 @@ static void	fill_integer_part(char *result, int int_part, int end_idx)
 }
 
 /**
- * @brief Fill the string with both integer and decimal parts of the float.
- * 
- * @param result The string to fill.
- * @param nbr The float number to convert.
- * @param decimals The number of decimal places to include.
- * @param length The total length of the resulting string.
+ * @brief Orchestrates the complete float-to-string conversion process
+ *
+ * @details Separates the number into integer and fractional components,
+ * then delegates to specialized functions to fill each portion of the
+ * string representation. Coordinates the placement of all digits and
+ * the decimal point.
+ *
+ * @param[out] result The string buffer to fill
+ * @param[in] nbr The floating-point number (absolute value)
+ * @param[in] decimals Number of decimal places
+ * @param[in] length Total string length
  */
 static void	fill_float_str(char *result, float nbr, int decimals, int length)
 {
@@ -125,15 +132,23 @@ static void	fill_float_str(char *result, float nbr, int decimals, int length)
 }
 
 /**
- * @brief Converts a float to a string with specified decimal places.
+ * @brief Converts a floating-point number to string with precision control
+ *
+ * @details Allocates and generates a null-terminated string containing the
+ * decimal representation of the given float with the specified number of
+ * decimal places. Handles negative numbers by including a minus sign prefix.
+ * The conversion separates integer and fractional parts for accurate
+ * representation.
+ *
  * @ingroup conversion_functions
- * 
- * @param n The float number to convert.
- * @param decimals The number of decimal places to include in the result.
- * 
- * @return A pointer to the newly allocated string representation of the float.
- * @retval NULL if memory allocation failed.
- * @warning Needs to be freed after use.
+ *
+ * @param[in] n The floating-point number to convert
+ * @param[in] decimals Number of decimal places to include in output
+ *
+ * @return Pointer to the newly allocated string containing the float value
+ * @retval NULL Memory allocation failed
+ *
+ * @warning The returned string must be freed by the caller to prevent memory leaks
  */
 char	*float_to_str(float n, int decimals)
 {

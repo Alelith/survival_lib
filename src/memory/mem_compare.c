@@ -1,33 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mem_compare.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 11:37:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/26 01:12:47 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stddef.h>
 
 /**
  * @file mem_compare.c
+ * @brief Implementation of byte-level memory comparison
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the mem_compare function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Compares two memory blocks.
+ * @brief Compares two memory blocks byte by byte for equality
+ *
+ * @details Performs a byte-by-byte comparison of two memory regions of size n.
+ * Returns 1 only if all bytes are identical, 0 otherwise. Returns 0 if either
+ * pointer is NULL, ensuring safe operation. Unlike standard memcmp, this
+ * function returns a boolean equality result rather than a signed difference.
+ *
  * @ingroup memory_functions
- * 
- * @param s1 The first memory block.
- * @param s2 The second memory block.
- * @param n The number of bytes to compare.
- * 
- * @retval 1 if the memory blocks are equal.
- * @retval 0 if the memory blocks are not equal.
+ *
+ * @param[in] s1 Pointer to the first memory block
+ * @param[in] s2 Pointer to the second memory block
+ * @param[in] n Number of bytes to compare
+ *
+ * @return Integer indicating equality status
+ * @retval 1 All n bytes are identical
+ * @retval 0 Memory blocks differ, or a pointer is NULL
  */
 int	mem_compare(const void *s1, const void *s2, size_t n)
 {

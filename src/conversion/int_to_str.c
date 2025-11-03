@@ -1,29 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   int_to_str.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 22:27:17 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:43:34 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file int_to_str.c
+ * @brief Implementation of signed integer to string conversion
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the int_to_str function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Calculates the number of digits and signs needed to represent a number.
- * 
- * @param nbr The number to evaluate.
- * 
- * @return The total length required to represent the number as a string.
+ * @brief Calculates the string length needed to represent an integer
+ *
+ * @details Computes the total number of characters required to represent
+ * a signed integer as a string, including the negative sign if applicable
+ * and all digits. Special handling for negative numbers and zero.
+ *
+ * @param[in] nbr The integer to evaluate
+ *
+ * @return The total character count needed for string representation
  */
 static int	int_len(int nbr)
 {
@@ -41,14 +35,22 @@ static int	int_len(int nbr)
 }
 
 /**
- * @brief Converts an integer to a string representation.
+ * @brief Converts a signed integer to its string representation
+ *
+ * @details Allocates and generates a null-terminated string containing the
+ * decimal representation of the given integer. Handles negative numbers by
+ * including a minus sign prefix. The conversion is performed by extracting
+ * digits through modulo and division operations, building the string from
+ * right to left.
+ *
  * @ingroup conversion_functions
- * 
- * @param n The integer to convert.
- * 
- * @return A pointer to the newly allocated string representation of the integer.
- * @retval NULL if memory allocation failed.
- * @warning Needs to be freed after use.
+ *
+ * @param[in] n The signed integer to convert
+ *
+ * @return Pointer to the newly allocated string containing the integer value
+ * @retval NULL Memory allocation failed
+ *
+ * @warning The returned string must be freed by the caller to prevent memory leaks
  */
 char	*int_to_str(int n)
 {

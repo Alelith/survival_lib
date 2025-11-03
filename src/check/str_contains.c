@@ -1,32 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_contains.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 09:23:33 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:43:33 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_contains.c
+ * @brief Implementation of the str_contains set membership function
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_contains function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Checks if a string contains any character from a specified set.
+ * @brief Checks if a string contains any character from a given set
+ *
+ * @details Iterates through the entire string and checks each character
+ * against the provided character set. Returns immediately upon finding the
+ * first match. This is useful for validating whether a string contains any
+ * forbidden or required characters from a specific set.
+ *
  * @ingroup check_functions
- * 
- * @param str The string to search.
- * @param set The set of characters to look for.
- * 
- * @retval 1 if the string contains at least one character from the set.
- * @retval 0 if the string contains no characters from the set.
+ *
+ * @param[in] str Null-terminated string to search through
+ * @param[in] set Null-terminated string containing the set of characters
+ *
+ * @return Integer indicating whether any set character is found
+ * @retval 1 At least one character from set is found in str
+ * @retval 0 No characters from set are found in str, or str is NULL
  */
 int	str_contains(char *str, char *set)
 {

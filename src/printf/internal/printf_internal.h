@@ -1,19 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   printf_internal.h                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 22:40:25 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:42:40 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 /**
  * @file printf_internal.h
+ * @brief Internal header for print_format implementation functions
+ *
  * @author Lilith Estévez Boeta
- * @brief Internal header for the functions used by print_format.
+ * @date November 3, 2025
+ *
+ * @note This header is for internal use by the print_format module only
  */
 
 #ifndef PRINTF_INTERNAL_H

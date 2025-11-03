@@ -1,28 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_to_uint.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/24 22:51:20 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 22:32:22 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 /**
  * @file str_to_uint.c
+ * @brief Implementation of string to unsigned integer conversion
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_to_uint function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Converts a string to an unsigned integer.
+ * @brief Parses a string and converts it to an unsigned integer
+ *
+ * @details Converts a null-terminated string containing only digit characters
+ * to its unsigned integer representation. Processes the entire string or until
+ * a non-digit character is encountered. No sign handling is performed.
+ *
  * @ingroup conversion_functions
- * 
- * @param nptr The string to convert.
- * 
- * @return The unsigned integer representation of the string.
+ *
+ * @param[in] nptr Null-terminated string containing digits to parse
+ *
+ * @return The parsed unsigned integer value
+ *
+ * @note Does not handle overflow; behavior is undefined for values outside unsigned int range
+ * @note Does not validate input; passing non-digit characters produces undefined results
  */
 unsigned int	str_to_uint(const char *nptr)
 {

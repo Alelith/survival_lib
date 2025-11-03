@@ -1,29 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   is_digit.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:09:48 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 21:55:57 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 /**
  * @file is_digit.c
+ * @brief Implementation of the is_digit character validation function
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the is_digit function.
+ * @date November 3, 2025
  */
 
-/** 
- * @brief Checks if the character is a digit.
+/**
+ * @brief Checks if a character is a numeric digit
+ *
+ * @details Determines whether the given character is a decimal digit (0-9)
+ * according to ASCII encoding. This function validates characters based on
+ * their ASCII values: 48-57 correspond to digits '0' through '9'.
+ *
  * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @retval 1 if the character is a digit.
- * @retval 0 if the character is not a digit.
+ *
+ * @param[in] c The character to validate (as integer ASCII value)
+ *
+ * @return Integer indicating the result of the validation
+ * @retval 1 The character is a numeric digit (0-9)
+ * @retval 0 The character is not a numeric digit
  */
 int	is_digit(int c)
 {

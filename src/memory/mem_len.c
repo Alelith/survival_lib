@@ -1,35 +1,30 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mem_len.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/25 17:35:16 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 18:18:41 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file mem_len.c
+ * @brief Implementation of null-terminated memory block length calculation
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the mem_len function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Gets the length of a memory block.
+ * @brief Calculates the number of elements in a null-terminated memory block
+ *
+ * @details Counts the number of elements (not bytes) in a null-terminated
+ * memory block by checking for null bytes at element boundaries. The block
+ * is treated as an array of elements of size blk_size. Counting stops when
+ * a null byte is encountered at the start of an element position.
+ *
  * @ingroup memory_functions
- * 
- * @param ptr The memory direction that the block starts.
- * @param blk_size Size of each data value in the memory block (1 for chars, 
- * 4 for int, 8 for pointers, etc.).
- * 
- * @return The size of the memory block.
- * 
- * @warning The memory block needs to be NULL terminated, if is not NULL 
- * terminated the behaviour of this function is undefined.
+ *
+ * @param[in] ptr Pointer to the start of the memory block
+ * @param[in] blk_size Size of each element in bytes (1 for char, 4 for int, 8 for pointers)
+ *
+ * @return Number of elements before the null terminator
+ *
+ * @warning The memory block must be null-terminated; undefined behavior otherwise
+ * @warning Assumes element boundaries are at multiples of blk_size
  */
 int	mem_len(void *ptr, size_t blk_size)
 {

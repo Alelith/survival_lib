@@ -1,32 +1,29 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   str_compare_all.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 11:35:54 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/26 01:12:27 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file str_compare_all.c
+ * @brief Implementation of the str_compare_all string comparison function
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the str_compare_all function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Checks if two strings are equal.
- * @ingroup check_functions
- * 
- * @param s1 The first string.
- * @param s2 The second string.
+ * @brief Compares two strings for complete equality
  *
- * @retval 1 if the strings are equal.
- * @retval 0 if the strings are not equal.
+ * @details Performs a full string comparison by first checking if the strings
+ * have equal lengths, then comparing their contents byte-by-byte. Both strings
+ * must have identical lengths and content to be considered equal. Returns 0
+ * if either pointer is NULL, ensuring safe operation.
+ *
+ * @ingroup check_functions
+ *
+ * @param[in] s1 First null-terminated string to compare
+ * @param[in] s2 Second null-terminated string to compare
+ *
+ * @return Integer indicating equality status
+ * @retval 1 The strings are completely equal in length and content
+ * @retval 0 The strings differ in length or content, or a pointer is NULL
  */
 int	str_compare_all(const char *s1, const char *s2)
 {

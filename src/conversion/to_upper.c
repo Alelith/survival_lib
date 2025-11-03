@@ -1,29 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   to_upper.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 11:32:13 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/25 22:42:17 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 /**
  * @file to_upper.c
+ * @brief Implementation of lowercase to uppercase character conversion
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the to_upper function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Converts a character to uppercase.
+ * @brief Converts a lowercase letter to uppercase
+ *
+ * @details Transforms lowercase ASCII letters (a-z) to their uppercase
+ * equivalents (A-Z) by subtracting 32 from the ASCII value. Non-lowercase
+ * characters are returned unchanged. This function only affects English
+ * alphabet letters.
+ *
  * @ingroup conversion_functions
- * 
- * @param c The character to convert.
- * 
- * @retval uppercase version of the character if it is alphabetic (a-z).
- * @retval c unchanged if it is not alphabetic.
+ *
+ * @param[in] c The character to convert (as integer ASCII value)
+ *
+ * @return The converted character
+ * @retval uppercase The uppercase equivalent if c is lowercase (a-z)
+ * @retval c The original character if not lowercase
  */
 int	to_upper(int c)
 {

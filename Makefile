@@ -89,6 +89,10 @@ $(OBJSF):
 	@mkdir -p $(OBJ_DIR)$(PRINTF_DIR)internal/
 	@mkdir -p $(OBJ_DIR)$(GNL_DIR)
 
+docs:
+	@echo "$(BLUE)Generating documentation...$(DEF_COLOR)"
+	@doxygen Doxyfile
+
 clean:
 	@echo "$(RED)Cleaning obj files$(DEF_COLOR)"
 	@rm -rf $(OBJ_DIR)

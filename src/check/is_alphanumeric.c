@@ -1,31 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   is_alphanumeric.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: acesteve <acesteve@student.42malaga.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/22 15:12:09 by acesteve          #+#    #+#             */
-/*   Updated: 2025/10/24 21:55:26 by acesteve         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "survival_lib.h"
 
 /**
  * @file is_alphanumeric.c
+ * @brief Implementation of the is_alphanumeric character validation function
+ *
  * @author Lilith Estévez Boeta
- * @brief This file contains the implementation of the is_alphanumeric function.
+ * @date November 3, 2025
  */
 
 /**
- * @brief Checks if the character is an alphanumeric character.
+ * @brief Checks if a character is alphanumeric
+ *
+ * @details Determines whether the given character is either an alphabetic
+ * letter (A-Z, a-z) or a numeric digit (0-9). This function combines the
+ * validation logic of is_alphabetic() and is_digit() to provide a unified
+ * alphanumeric check.
+ *
  * @ingroup check_functions
- * 
- * @param c The character to check.
- * 
- * @retval 1 if the character is alphanumeric.
- * @retval 0 if the character is not alphanumeric.
+ *
+ * @param[in] c The character to validate (as integer ASCII value)
+ *
+ * @return Integer indicating the result of the validation
+ * @retval 1 The character is alphanumeric (letter or digit)
+ * @retval 0 The character is not alphanumeric
  */
 int	is_alphanumeric(int c)
 {
